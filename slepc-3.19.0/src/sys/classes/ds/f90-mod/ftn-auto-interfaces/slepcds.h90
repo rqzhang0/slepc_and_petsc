@@ -1,0 +1,378 @@
+      subroutine DSGSVDSetDimensions(a,b,c,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine DSGSVDSetDimensions
+      subroutine DSGSVDGetDimensions(a,b,c,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine DSGSVDGetDimensions
+      subroutine DSPEPSetDegree(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSPEPSetDegree
+      subroutine DSPEPGetDegree(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSPEPGetDegree
+      subroutine DSSVDSetDimensions(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSSVDSetDimensions
+      subroutine DSSVDGetDimensions(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSSVDGetDimensions
+      subroutine DSNEPSetFN(a,b,c,z)
+       import tDS,tFN
+       DS a ! DS
+       PetscInt b ! PetscInt
+       FN c (*) ! FN
+       PetscErrorCode z
+       end subroutine DSNEPSetFN
+      subroutine DSNEPGetFN(a,b,c,z)
+       import tDS,tFN
+       DS a ! DS
+       PetscInt b ! PetscInt
+       FN c ! FN
+       PetscErrorCode z
+       end subroutine DSNEPGetFN
+      subroutine DSNEPGetNumFN(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSNEPGetNumFN
+      subroutine DSNEPSetMinimality(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSNEPSetMinimality
+      subroutine DSNEPGetMinimality(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSNEPGetMinimality
+      subroutine DSNEPSetRefine(a,b,c,z)
+       import tDS
+       DS a ! DS
+       PetscReal b ! PetscReal
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine DSNEPSetRefine
+      subroutine DSNEPGetRefine(a,b,c,z)
+       import tDS
+       DS a ! DS
+       PetscReal b ! PetscReal
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine DSNEPGetRefine
+      subroutine DSNEPSetIntegrationPoints(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSNEPSetIntegrationPoints
+      subroutine DSNEPGetIntegrationPoints(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSNEPGetIntegrationPoints
+      subroutine DSNEPSetSamplingSize(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSNEPSetSamplingSize
+      subroutine DSNEPGetSamplingSize(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSNEPGetSamplingSize
+      subroutine DSNEPSetRG(a,b,z)
+       import tDS,tRG
+       DS a ! DS
+       RG b ! RG
+       PetscErrorCode z
+       end subroutine DSNEPSetRG
+      subroutine DSNEPGetRG(a,b,z)
+       import tDS,tRG
+       DS a ! DS
+       RG b ! RG
+       PetscErrorCode z
+       end subroutine DSNEPGetRG
+      subroutine DSHSVDSetDimensions(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSHSVDSetDimensions
+      subroutine DSHSVDGetDimensions(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSHSVDGetDimensions
+      subroutine DSHSVDSetReorthogonalize(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine DSHSVDSetReorthogonalize
+      subroutine DSHSVDGetReorthogonalize(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine DSHSVDGetReorthogonalize
+      subroutine DSSetIdentity(a,b,z)
+       import tDS
+       DS a ! DS
+       DSMatType b ! DSMatType
+       PetscErrorCode z
+       end subroutine DSSetIdentity
+      subroutine DSGetLeadingDimension(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSGetLeadingDimension
+      subroutine DSSetState(a,b,z)
+       import tDS
+       DS a ! DS
+       DSStateType b ! DSStateType
+       PetscErrorCode z
+       end subroutine DSSetState
+      subroutine DSGetState(a,b,z)
+       import tDS
+       DS a ! DS
+       DSStateType b ! DSStateType
+       PetscErrorCode z
+       end subroutine DSGetState
+      subroutine DSSetDimensions(a,b,c,d,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine DSSetDimensions
+      subroutine DSGetDimensions(a,b,c,d,e,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscInt e ! PetscInt
+       PetscErrorCode z
+       end subroutine DSGetDimensions
+      subroutine DSTruncate(a,b,c,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscBool c ! PetscBool
+       PetscErrorCode z
+       end subroutine DSTruncate
+      subroutine DSMatGetSize(a,b,c,d,z)
+       import tDS
+       DS a ! DS
+       DSMatType b ! DSMatType
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine DSMatGetSize
+      subroutine DSMatIsHermitian(a,b,c,z)
+       import tDS
+       DS a ! DS
+       DSMatType b ! DSMatType
+       PetscBool c ! PetscBool
+       PetscErrorCode z
+       end subroutine DSMatIsHermitian
+      subroutine DSGetTruncateSize(a,b,c,d,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine DSGetTruncateSize
+      subroutine DSGetMat(a,b,c,z)
+       import tDS,tMat
+       DS a ! DS
+       DSMatType b ! DSMatType
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine DSGetMat
+      subroutine DSRestoreMat(a,b,c,z)
+       import tDS,tMat
+       DS a ! DS
+       DSMatType b ! DSMatType
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine DSRestoreMat
+      subroutine DSGetMatAndColumn(a,b,c,d,e,z)
+       import tDS,tMat,tVec
+       DS a ! DS
+       DSMatType b ! DSMatType
+       PetscInt c ! PetscInt
+       Mat d ! Mat
+       Vec e ! Vec
+       PetscErrorCode z
+       end subroutine DSGetMatAndColumn
+      subroutine DSRestoreMatAndColumn(a,b,c,d,e,z)
+       import tDS,tMat,tVec
+       DS a ! DS
+       DSMatType b ! DSMatType
+       PetscInt c ! PetscInt
+       Mat d ! Mat
+       Vec e ! Vec
+       PetscErrorCode z
+       end subroutine DSRestoreMatAndColumn
+      subroutine DSSolve(a,b,c,z)
+       import tDS
+       DS a ! DS
+       PetscScalar b (*) ! PetscScalar
+       PetscScalar c (*) ! PetscScalar
+       PetscErrorCode z
+       end subroutine DSSolve
+      subroutine DSSynchronize(a,b,c,z)
+       import tDS
+       DS a ! DS
+       PetscScalar b (*) ! PetscScalar
+       PetscScalar c (*) ! PetscScalar
+       PetscErrorCode z
+       end subroutine DSSynchronize
+      subroutine DSUpdateExtraRow(a,z)
+       import tDS
+       DS a ! DS
+       PetscErrorCode z
+       end subroutine DSUpdateExtraRow
+      subroutine DSCond(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine DSCond
+      subroutine DSTranslateRKS(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine DSTranslateRKS
+      subroutine DSCreate(a,b,z)
+       import tDS
+       MPI_Comm a ! MPI_Comm
+       DS b ! DS
+       PetscErrorCode z
+       end subroutine DSCreate
+      subroutine DSDuplicate(a,b,z)
+       import tDS
+       DS a ! DS
+       DS b ! DS
+       PetscErrorCode z
+       end subroutine DSDuplicate
+      subroutine DSSetMethod(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSSetMethod
+      subroutine DSGetMethod(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSGetMethod
+      subroutine DSSetParallel(a,b,z)
+       import tDS
+       DS a ! DS
+       DSParallelType b ! DSParallelType
+       PetscErrorCode z
+       end subroutine DSSetParallel
+      subroutine DSGetParallel(a,b,z)
+       import tDS
+       DS a ! DS
+       DSParallelType b ! DSParallelType
+       PetscErrorCode z
+       end subroutine DSGetParallel
+      subroutine DSSetCompact(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine DSSetCompact
+      subroutine DSGetCompact(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine DSGetCompact
+      subroutine DSSetExtraRow(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine DSSetExtraRow
+      subroutine DSGetExtraRow(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine DSGetExtraRow
+      subroutine DSSetRefined(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine DSSetRefined
+      subroutine DSGetRefined(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine DSGetRefined
+      subroutine DSSetBlockSize(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSSetBlockSize
+      subroutine DSGetBlockSize(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSGetBlockSize
+      subroutine DSSetFromOptions(a,z)
+       import tDS
+       DS a ! DS
+       PetscErrorCode z
+       end subroutine DSSetFromOptions
+      subroutine DSAllocate(a,b,z)
+       import tDS
+       DS a ! DS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine DSAllocate
+      subroutine DSReset(a,z)
+       import tDS
+       DS a ! DS
+       PetscErrorCode z
+       end subroutine DSReset

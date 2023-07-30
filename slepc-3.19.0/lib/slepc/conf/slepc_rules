@@ -1,0 +1,14 @@
+#
+#  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#  SLEPc - Scalable Library for Eigenvalue Problem Computations
+#  Copyright (c) 2002-, Universitat Politecnica de Valencia, Spain
+#
+#  This file is part of SLEPc.
+#  SLEPc is distributed under a 2-clause BSD license (see LICENSE).
+#  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+
+LDLIBS += $(SLEPC_LIB)
+
+include ${PETSC_DIR}/lib/petsc/conf/rules
+include ${SLEPC_DIR}/${PETSC_ARCH}/lib/slepc/conf/slepcrules

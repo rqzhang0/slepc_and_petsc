@@ -1,0 +1,438 @@
+      subroutine SVDLanczosSetOneSide(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDLanczosSetOneSide
+      subroutine SVDLanczosGetOneSide(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDLanczosGetOneSide
+      subroutine SVDCyclicSetExplicitMatrix(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDCyclicSetExplicitMatrix
+      subroutine SVDCyclicGetExplicitMatrix(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDCyclicGetExplicitMatrix
+      subroutine SVDCyclicSetEPS(a,b,z)
+       import tEPS,tSVD
+       SVD a ! SVD
+       EPS b ! EPS
+       PetscErrorCode z
+       end subroutine SVDCyclicSetEPS
+      subroutine SVDCyclicGetEPS(a,b,z)
+       import tEPS,tSVD
+       SVD a ! SVD
+       EPS b ! EPS
+       PetscErrorCode z
+       end subroutine SVDCyclicGetEPS
+      subroutine SVDConvergedReasonViewFromOptions(a,z)
+       import tSVD
+       SVD a ! SVD
+       PetscErrorCode z
+       end subroutine SVDConvergedReasonViewFromOptions
+      subroutine SVDErrorViewFromOptions(a,z)
+       import tSVD
+       SVD a ! SVD
+       PetscErrorCode z
+       end subroutine SVDErrorViewFromOptions
+      subroutine SVDValuesViewFromOptions(a,z)
+       import tSVD
+       SVD a ! SVD
+       PetscErrorCode z
+       end subroutine SVDValuesViewFromOptions
+      subroutine SVDVectorsViewFromOptions(a,z)
+       import tSVD
+       SVD a ! SVD
+       PetscErrorCode z
+       end subroutine SVDVectorsViewFromOptions
+      subroutine SVDCreate(a,b,z)
+       import tSVD
+       MPI_Comm a ! MPI_Comm
+       SVD b ! SVD
+       PetscErrorCode z
+       end subroutine SVDCreate
+      subroutine SVDReset(a,z)
+       import tSVD
+       SVD a ! SVD
+       PetscErrorCode z
+       end subroutine SVDReset
+      subroutine SVDSetBV(a,b,c,z)
+       import tBV,tSVD
+       SVD a ! SVD
+       BV b ! BV
+       BV c ! BV
+       PetscErrorCode z
+       end subroutine SVDSetBV
+      subroutine SVDGetBV(a,b,c,z)
+       import tBV,tSVD
+       SVD a ! SVD
+       BV b ! BV
+       BV c ! BV
+       PetscErrorCode z
+       end subroutine SVDGetBV
+      subroutine SVDSetDS(a,b,z)
+       import tDS,tSVD
+       SVD a ! SVD
+       DS b ! DS
+       PetscErrorCode z
+       end subroutine SVDSetDS
+      subroutine SVDGetDS(a,b,z)
+       import tDS,tSVD
+       SVD a ! SVD
+       DS b ! DS
+       PetscErrorCode z
+       end subroutine SVDGetDS
+      subroutine SVDSetImplicitTranspose(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDSetImplicitTranspose
+      subroutine SVDGetImplicitTranspose(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDGetImplicitTranspose
+      subroutine SVDSetTolerances(a,b,c,z)
+       import tSVD
+       SVD a ! SVD
+       PetscReal b ! PetscReal
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine SVDSetTolerances
+      subroutine SVDSetDimensions(a,b,c,d,z)
+       import tSVD
+       SVD a ! SVD
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine SVDSetDimensions
+      subroutine SVDSetWhichSingularTriplets(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDWhich b ! SVDWhich
+       PetscErrorCode z
+       end subroutine SVDSetWhichSingularTriplets
+      subroutine SVDGetWhichSingularTriplets(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDWhich b ! SVDWhich
+       PetscErrorCode z
+       end subroutine SVDGetWhichSingularTriplets
+      subroutine SVDSetConvergenceTest(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDConv b ! SVDConv
+       PetscErrorCode z
+       end subroutine SVDSetConvergenceTest
+      subroutine SVDGetConvergenceTest(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDConv b ! SVDConv
+       PetscErrorCode z
+       end subroutine SVDGetConvergenceTest
+      subroutine SVDSetStoppingTest(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDStop b ! SVDStop
+       PetscErrorCode z
+       end subroutine SVDSetStoppingTest
+      subroutine SVDGetStoppingTest(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDStop b ! SVDStop
+       PetscErrorCode z
+       end subroutine SVDGetStoppingTest
+      subroutine SVDSetFromOptions(a,z)
+       import tSVD
+       SVD a ! SVD
+       PetscErrorCode z
+       end subroutine SVDSetFromOptions
+      subroutine SVDSetProblemType(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDProblemType b ! SVDProblemType
+       PetscErrorCode z
+       end subroutine SVDSetProblemType
+      subroutine SVDGetProblemType(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDProblemType b ! SVDProblemType
+       PetscErrorCode z
+       end subroutine SVDGetProblemType
+      subroutine SVDIsGeneralized(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDIsGeneralized
+      subroutine SVDIsHyperbolic(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDIsHyperbolic
+      subroutine SVDSetTrackAll(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDSetTrackAll
+      subroutine SVDGetTrackAll(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDGetTrackAll
+      subroutine SVDSetWorkVecs(a,b,c,z)
+       import tSVD
+       SVD a ! SVD
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine SVDSetWorkVecs
+      subroutine SVDSolve(a,z)
+       import tSVD
+       SVD a ! SVD
+       PetscErrorCode z
+       end subroutine SVDSolve
+      subroutine SVDGetIterationNumber(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine SVDGetIterationNumber
+      subroutine SVDGetConvergedReason(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDConvergedReason b ! SVDConvergedReason
+       PetscErrorCode z
+       end subroutine SVDGetConvergedReason
+      subroutine SVDGetConverged(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine SVDGetConverged
+      subroutine SVDComputeError(a,b,c,d,z)
+       import tSVD
+       SVD a ! SVD
+       PetscInt b ! PetscInt
+       SVDErrorType c ! SVDErrorType
+       PetscReal d ! PetscReal
+       PetscErrorCode z
+       end subroutine SVDComputeError
+      subroutine SVDMonitorCancel(a,z)
+       import tSVD
+       SVD a ! SVD
+       PetscErrorCode z
+       end subroutine SVDMonitorCancel
+      subroutine SVDSetOperators(a,b,c,z)
+       import tMat,tSVD
+       SVD a ! SVD
+       Mat b ! Mat
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine SVDSetOperators
+      subroutine SVDGetOperators(a,b,c,z)
+       import tMat,tSVD
+       SVD a ! SVD
+       Mat b ! Mat
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine SVDGetOperators
+      subroutine SVDSetSignature(a,b,z)
+       import tVec,tSVD
+       SVD a ! SVD
+       Vec b ! Vec
+       PetscErrorCode z
+       end subroutine SVDSetSignature
+      subroutine SVDGetSignature(a,b,z)
+       import tVec,tSVD
+       SVD a ! SVD
+       Vec b ! Vec
+       PetscErrorCode z
+       end subroutine SVDGetSignature
+      subroutine SVDSetDSType(a,z)
+       import tSVD
+       SVD a ! SVD
+       PetscErrorCode z
+       end subroutine SVDSetDSType
+      subroutine SVDSetUp(a,z)
+       import tSVD
+       SVD a ! SVD
+       PetscErrorCode z
+       end subroutine SVDSetUp
+      subroutine SVDAllocateSolution(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine SVDAllocateSolution
+      subroutine SVDKSVDSetEigenMethod(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDKSVDEigenMethod b ! SVDKSVDEigenMethod
+       PetscErrorCode z
+       end subroutine SVDKSVDSetEigenMethod
+      subroutine SVDKSVDGetEigenMethod(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDKSVDEigenMethod b ! SVDKSVDEigenMethod
+       PetscErrorCode z
+       end subroutine SVDKSVDGetEigenMethod
+      subroutine SVDKSVDSetPolarMethod(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDKSVDPolarMethod b ! SVDKSVDPolarMethod
+       PetscErrorCode z
+       end subroutine SVDKSVDSetPolarMethod
+      subroutine SVDKSVDGetPolarMethod(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDKSVDPolarMethod b ! SVDKSVDPolarMethod
+       PetscErrorCode z
+       end subroutine SVDKSVDGetPolarMethod
+      subroutine SVDPRIMMESetBlockSize(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine SVDPRIMMESetBlockSize
+      subroutine SVDPRIMMEGetBlockSize(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine SVDPRIMMEGetBlockSize
+      subroutine SVDPRIMMESetMethod(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDPRIMMEMethod b ! SVDPRIMMEMethod
+       PetscErrorCode z
+       end subroutine SVDPRIMMESetMethod
+      subroutine SVDPRIMMEGetMethod(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDPRIMMEMethod b ! SVDPRIMMEMethod
+       PetscErrorCode z
+       end subroutine SVDPRIMMEGetMethod
+      subroutine SVDTRLanczosSetOneSide(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDTRLanczosSetOneSide
+      subroutine SVDTRLanczosGetOneSide(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDTRLanczosGetOneSide
+      subroutine SVDTRLanczosSetGBidiag(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDTRLanczosGBidiag b ! SVDTRLanczosGBidiag
+       PetscErrorCode z
+       end subroutine SVDTRLanczosSetGBidiag
+      subroutine SVDTRLanczosGetGBidiag(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       SVDTRLanczosGBidiag b ! SVDTRLanczosGBidiag
+       PetscErrorCode z
+       end subroutine SVDTRLanczosGetGBidiag
+      subroutine SVDTRLanczosSetKSP(a,b,z)
+       import tKSP,tSVD
+       SVD a ! SVD
+       KSP b ! KSP
+       PetscErrorCode z
+       end subroutine SVDTRLanczosSetKSP
+      subroutine SVDTRLanczosGetKSP(a,b,z)
+       import tKSP,tSVD
+       SVD a ! SVD
+       KSP b ! KSP
+       PetscErrorCode z
+       end subroutine SVDTRLanczosGetKSP
+      subroutine SVDTRLanczosSetRestart(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine SVDTRLanczosSetRestart
+      subroutine SVDTRLanczosGetRestart(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine SVDTRLanczosGetRestart
+      subroutine SVDTRLanczosSetLocking(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDTRLanczosSetLocking
+      subroutine SVDTRLanczosGetLocking(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDTRLanczosGetLocking
+      subroutine SVDTRLanczosSetExplicitMatrix(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDTRLanczosSetExplicitMatrix
+      subroutine SVDTRLanczosGetExplicitMatrix(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDTRLanczosGetExplicitMatrix
+      subroutine SVDTRLanczosSetScale(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine SVDTRLanczosSetScale
+      subroutine SVDTRLanczosGetScale(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine SVDTRLanczosGetScale
+      subroutine SVDCrossSetExplicitMatrix(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDCrossSetExplicitMatrix
+      subroutine SVDCrossGetExplicitMatrix(a,b,z)
+       import tSVD
+       SVD a ! SVD
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine SVDCrossGetExplicitMatrix
+      subroutine SVDCrossSetEPS(a,b,z)
+       import tEPS,tSVD
+       SVD a ! SVD
+       EPS b ! EPS
+       PetscErrorCode z
+       end subroutine SVDCrossSetEPS
+      subroutine SVDCrossGetEPS(a,b,z)
+       import tEPS,tSVD
+       SVD a ! SVD
+       EPS b ! EPS
+       PetscErrorCode z
+       end subroutine SVDCrossGetEPS

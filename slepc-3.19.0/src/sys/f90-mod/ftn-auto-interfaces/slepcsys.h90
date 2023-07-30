@@ -1,0 +1,84 @@
+      subroutine MatCreateTile(a,b,c,d,e,f,g,h,i,z)
+       import tMat
+       PetscScalar a ! PetscScalar
+       Mat b ! Mat
+       PetscScalar c ! PetscScalar
+       Mat d ! Mat
+       PetscScalar e ! PetscScalar
+       Mat f ! Mat
+       PetscScalar g ! PetscScalar
+       Mat h ! Mat
+       Mat i ! Mat
+       PetscErrorCode z
+       end subroutine MatCreateTile
+      subroutine SlepcSCCompare(a,b,c,d,e,f,z)
+       import tSlepcSC
+       SlepcSC a ! SlepcSC
+       PetscScalar b ! PetscScalar
+       PetscScalar c ! PetscScalar
+       PetscScalar d ! PetscScalar
+       PetscScalar e ! PetscScalar
+       PetscInt f ! PetscInt
+       PetscErrorCode z
+       end subroutine SlepcSCCompare
+      subroutine SlepcSortEigenvalues(a,b,c,d,e,z)
+       import tSlepcSC
+       SlepcSC a ! SlepcSC
+       PetscInt b ! PetscInt
+       PetscScalar c ! PetscScalar
+       PetscScalar d ! PetscScalar
+       PetscInt e ! PetscInt
+       PetscErrorCode z
+       end subroutine SlepcSortEigenvalues
+      subroutine SlepcInitialized(a,z)
+       PetscBool a ! PetscBool
+       PetscErrorCode z
+       end subroutine SlepcInitialized
+      subroutine SlepcFinalized(a,z)
+       PetscBool a ! PetscBool
+       PetscErrorCode z
+       end subroutine SlepcFinalized
+      subroutine VecNormalizeComplex(a,b,c,d,z)
+       import tVec
+       Vec a ! Vec
+       Vec b ! Vec
+       PetscBool c ! PetscBool
+       PetscReal d ! PetscReal
+       PetscErrorCode z
+       end subroutine VecNormalizeComplex
+      subroutine VecCheckOrthogonality(a,b,c,d,e,f,g,z)
+       import tPetscViewer,tMat,tVec
+       Vec a (*) ! Vec
+       PetscInt b ! PetscInt
+       Vec c (*) ! Vec
+       PetscInt d ! PetscInt
+       Mat e ! Mat
+       PetscViewer f ! PetscViewer
+       PetscReal g ! PetscReal
+       PetscErrorCode z
+       end subroutine VecCheckOrthogonality
+      subroutine VecCheckOrthonormality(a,b,c,d,e,f,g,z)
+       import tPetscViewer,tMat,tVec
+       Vec a (*) ! Vec
+       PetscInt b ! PetscInt
+       Vec c (*) ! Vec
+       PetscInt d ! PetscInt
+       Mat e ! Mat
+       PetscViewer f ! PetscViewer
+       PetscReal g ! PetscReal
+       PetscErrorCode z
+       end subroutine VecCheckOrthonormality
+      subroutine VecDuplicateEmpty(a,b,z)
+       import tVec
+       Vec a ! Vec
+       Vec b ! Vec
+       PetscErrorCode z
+       end subroutine VecDuplicateEmpty
+      subroutine VecSetRandomNormal(a,b,c,d,z)
+       import tPetscRandom,tVec
+       Vec a ! Vec
+       PetscRandom b ! PetscRandom
+       Vec c ! Vec
+       Vec d ! Vec
+       PetscErrorCode z
+       end subroutine VecSetRandomNormal

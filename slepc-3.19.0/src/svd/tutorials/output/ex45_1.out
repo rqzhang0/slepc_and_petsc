@@ -1,0 +1,18 @@
+
+Generalized singular value decomposition, (20+6)x10
+
+
+ Number of requested generalized singular values: 1
+ Stopping condition: tol=1e-08
+ Number of converged approximate singular triplets: 6
+
+          sigma           ||r||/||[A;B]||
+  --------------------- ------------------
+        7.616935          removed
+        6.168214          removed
+        3.973540          removed
+        1.873725          removed
+        0.536721          removed
+        0.045258          removed
+
+ Level of orthogonality below the tolerance

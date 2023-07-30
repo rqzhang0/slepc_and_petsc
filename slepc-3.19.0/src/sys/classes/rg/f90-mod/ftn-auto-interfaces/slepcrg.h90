@@ -1,0 +1,149 @@
+      subroutine RGIntervalSetEndpoints(a,b,c,d,e,z)
+       import tRG
+       RG a ! RG
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscReal d ! PetscReal
+       PetscReal e ! PetscReal
+       PetscErrorCode z
+       end subroutine RGIntervalSetEndpoints
+      subroutine RGRingSetParameters(a,b,c,d,e,f,g,z)
+       import tRG
+       RG a ! RG
+       PetscScalar b ! PetscScalar
+       PetscReal c ! PetscReal
+       PetscReal d ! PetscReal
+       PetscReal e ! PetscReal
+       PetscReal f ! PetscReal
+       PetscReal g ! PetscReal
+       PetscErrorCode z
+       end subroutine RGRingSetParameters
+      subroutine RGRingGetParameters(a,b,c,d,e,f,g,z)
+       import tRG
+       RG a ! RG
+       PetscScalar b ! PetscScalar
+       PetscReal c ! PetscReal
+       PetscReal d ! PetscReal
+       PetscReal e ! PetscReal
+       PetscReal f ! PetscReal
+       PetscReal g ! PetscReal
+       PetscErrorCode z
+       end subroutine RGRingGetParameters
+      subroutine RGEllipseSetParameters(a,b,c,d,z)
+       import tRG
+       RG a ! RG
+       PetscScalar b ! PetscScalar
+       PetscReal c ! PetscReal
+       PetscReal d ! PetscReal
+       PetscErrorCode z
+       end subroutine RGEllipseSetParameters
+      subroutine RGPolygonSetVertices(a,b,c,d,z)
+       import tRG
+       RG a ! RG
+       PetscInt b ! PetscInt
+       PetscScalar c (*) ! PetscScalar
+       PetscScalar d (*) ! PetscScalar
+       PetscErrorCode z
+       end subroutine RGPolygonSetVertices
+      subroutine RGCreate(a,b,z)
+       import tRG
+       MPI_Comm a ! MPI_Comm
+       RG b ! RG
+       PetscErrorCode z
+       end subroutine RGCreate
+      subroutine RGSetFromOptions(a,z)
+       import tRG
+       RG a ! RG
+       PetscErrorCode z
+       end subroutine RGSetFromOptions
+      subroutine RGIsTrivial(a,b,z)
+       import tRG
+       RG a ! RG
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine RGIsTrivial
+      subroutine RGCheckInside(a,b,c,d,e,z)
+       import tRG
+       RG a ! RG
+       PetscInt b ! PetscInt
+       PetscScalar c ! PetscScalar
+       PetscScalar d ! PetscScalar
+       PetscInt e ! PetscInt
+       PetscErrorCode z
+       end subroutine RGCheckInside
+      subroutine RGIsAxisymmetric(a,b,c,z)
+       import tRG
+       RG a ! RG
+       PetscBool b ! PetscBool
+       PetscBool c ! PetscBool
+       PetscErrorCode z
+       end subroutine RGIsAxisymmetric
+      subroutine RGCanUseConjugates(a,b,c,z)
+       import tRG
+       RG a ! RG
+       PetscBool b ! PetscBool
+       PetscBool c ! PetscBool
+       PetscErrorCode z
+       end subroutine RGCanUseConjugates
+      subroutine RGComputeContour(a,b,c,d,z)
+       import tRG
+       RG a ! RG
+       PetscInt b ! PetscInt
+       PetscScalar c (*) ! PetscScalar
+       PetscScalar d (*) ! PetscScalar
+       PetscErrorCode z
+       end subroutine RGComputeContour
+      subroutine RGComputeBoundingBox(a,b,c,d,e,z)
+       import tRG
+       RG a ! RG
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscReal d ! PetscReal
+       PetscReal e ! PetscReal
+       PetscErrorCode z
+       end subroutine RGComputeBoundingBox
+      subroutine RGComputeQuadrature(a,b,c,d,e,f,z)
+       import tRG
+       RG a ! RG
+       RGQuadRule b ! RGQuadRule
+       PetscInt c ! PetscInt
+       PetscScalar d (*) ! PetscScalar
+       PetscScalar e (*) ! PetscScalar
+       PetscScalar f (*) ! PetscScalar
+       PetscErrorCode z
+       end subroutine RGComputeQuadrature
+      subroutine RGSetComplement(a,b,z)
+       import tRG
+       RG a ! RG
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine RGSetComplement
+      subroutine RGGetComplement(a,b,z)
+       import tRG
+       RG a ! RG
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine RGGetComplement
+      subroutine RGSetScale(a,b,z)
+       import tRG
+       RG a ! RG
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine RGSetScale
+      subroutine RGGetScale(a,b,z)
+       import tRG
+       RG a ! RG
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine RGGetScale
+      subroutine RGPushScale(a,b,z)
+       import tRG
+       RG a ! RG
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine RGPushScale
+      subroutine RGPopScale(a,z)
+       import tRG
+       RG a ! RG
+       PetscErrorCode z
+       end subroutine RGPopScale

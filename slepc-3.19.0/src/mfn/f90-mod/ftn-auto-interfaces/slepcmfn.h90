@@ -1,0 +1,130 @@
+      subroutine MFNSolve(a,b,c,z)
+       import tVec,tMFN
+       MFN a ! MFN
+       Vec b ! Vec
+       Vec c ! Vec
+       PetscErrorCode z
+       end subroutine MFNSolve
+      subroutine MFNSolveTranspose(a,b,c,z)
+       import tVec,tMFN
+       MFN a ! MFN
+       Vec b ! Vec
+       Vec c ! Vec
+       PetscErrorCode z
+       end subroutine MFNSolveTranspose
+      subroutine MFNGetIterationNumber(a,b,z)
+       import tMFN
+       MFN a ! MFN
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine MFNGetIterationNumber
+      subroutine MFNGetConvergedReason(a,b,z)
+       import tMFN
+       MFN a ! MFN
+       MFNConvergedReason b ! MFNConvergedReason
+       PetscErrorCode z
+       end subroutine MFNGetConvergedReason
+      subroutine MFNMonitorCancel(a,z)
+       import tMFN
+       MFN a ! MFN
+       PetscErrorCode z
+       end subroutine MFNMonitorCancel
+      subroutine MFNSetUp(a,z)
+       import tMFN
+       MFN a ! MFN
+       PetscErrorCode z
+       end subroutine MFNSetUp
+      subroutine MFNSetOperator(a,b,z)
+       import tMat,tMFN
+       MFN a ! MFN
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine MFNSetOperator
+      subroutine MFNGetOperator(a,b,z)
+       import tMat,tMFN
+       MFN a ! MFN
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine MFNGetOperator
+      subroutine MFNAllocateSolution(a,b,z)
+       import tMFN
+       MFN a ! MFN
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine MFNAllocateSolution
+      subroutine MFNSetFromOptions(a,z)
+       import tMFN
+       MFN a ! MFN
+       PetscErrorCode z
+       end subroutine MFNSetFromOptions
+      subroutine MFNSetTolerances(a,b,c,z)
+       import tMFN
+       MFN a ! MFN
+       PetscReal b ! PetscReal
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine MFNSetTolerances
+      subroutine MFNGetDimensions(a,b,z)
+       import tMFN
+       MFN a ! MFN
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine MFNGetDimensions
+      subroutine MFNSetDimensions(a,b,z)
+       import tMFN
+       MFN a ! MFN
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine MFNSetDimensions
+      subroutine MFNSetErrorIfNotConverged(a,b,z)
+       import tMFN
+       MFN a ! MFN
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine MFNSetErrorIfNotConverged
+      subroutine MFNGetErrorIfNotConverged(a,b,z)
+       import tMFN
+       MFN a ! MFN
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine MFNGetErrorIfNotConverged
+      subroutine MFNConvergedReasonViewFromOptions(a,z)
+       import tMFN
+       MFN a ! MFN
+       PetscErrorCode z
+       end subroutine MFNConvergedReasonViewFromOptions
+      subroutine MFNCreate(a,b,z)
+       import tMFN
+       MPI_Comm a ! MPI_Comm
+       MFN b ! MFN
+       PetscErrorCode z
+       end subroutine MFNCreate
+      subroutine MFNReset(a,z)
+       import tMFN
+       MFN a ! MFN
+       PetscErrorCode z
+       end subroutine MFNReset
+      subroutine MFNSetBV(a,b,z)
+       import tMFN,tBV
+       MFN a ! MFN
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine MFNSetBV
+      subroutine MFNGetBV(a,b,z)
+       import tMFN,tBV
+       MFN a ! MFN
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine MFNGetBV
+      subroutine MFNSetFN(a,b,z)
+       import tMFN,tFN
+       MFN a ! MFN
+       FN b ! FN
+       PetscErrorCode z
+       end subroutine MFNSetFN
+      subroutine MFNGetFN(a,b,z)
+       import tMFN,tFN
+       MFN a ! MFN
+       FN b ! FN
+       PetscErrorCode z
+       end subroutine MFNGetFN

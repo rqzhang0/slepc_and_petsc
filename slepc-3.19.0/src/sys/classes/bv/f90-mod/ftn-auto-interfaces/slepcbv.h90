@@ -1,0 +1,704 @@
+      subroutine BVOrthogonalizeVec(a,b,c,d,e,z)
+       import tVec,tBV
+       BV a ! BV
+       Vec b ! Vec
+       PetscScalar c ! PetscScalar
+       PetscReal d ! PetscReal
+       PetscBool e ! PetscBool
+       PetscErrorCode z
+       end subroutine BVOrthogonalizeVec
+      subroutine BVOrthogonalizeColumn(a,b,c,d,e,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscScalar c ! PetscScalar
+       PetscReal d ! PetscReal
+       PetscBool e ! PetscBool
+       PetscErrorCode z
+       end subroutine BVOrthogonalizeColumn
+      subroutine BVOrthonormalizeColumn(a,b,c,d,e,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscBool c ! PetscBool
+       PetscReal d ! PetscReal
+       PetscBool e ! PetscBool
+       PetscErrorCode z
+       end subroutine BVOrthonormalizeColumn
+      subroutine BVOrthogonalizeSomeColumn(a,b,c,d,e,f,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscBool c ! PetscBool
+       PetscScalar d ! PetscScalar
+       PetscReal e ! PetscReal
+       PetscBool f ! PetscBool
+       PetscErrorCode z
+       end subroutine BVOrthogonalizeSomeColumn
+      subroutine BVOrthogonalize(a,b,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine BVOrthogonalize
+      subroutine BVScatter(a,b,c,d,z)
+       import tVec,tBV,tVecScatter
+       BV a ! BV
+       BV b ! BV
+       VecScatter c ! VecScatter
+       Vec d ! Vec
+       PetscErrorCode z
+       end subroutine BVScatter
+      subroutine BVSumQuadrature(a,b,c,d,e,f,g,h,i,j,k,z)
+       import tPetscSubcomm,tBV,tVecScatter
+       BV a ! BV
+       BV b ! BV
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscInt e ! PetscInt
+       PetscScalar f ! PetscScalar
+       PetscScalar g ! PetscScalar
+       VecScatter h ! VecScatter
+       PetscSubcomm i ! PetscSubcomm
+       PetscInt j ! PetscInt
+       PetscBool k ! PetscBool
+       PetscErrorCode z
+       end subroutine BVSumQuadrature
+      subroutine BVDotQuadrature(a,b,c,d,e,f,g,h,i,j,k,z)
+       import tPetscSubcomm,tBV
+       BV a ! BV
+       BV b ! BV
+       PetscScalar c ! PetscScalar
+       PetscInt d ! PetscInt
+       PetscInt e ! PetscInt
+       PetscInt f ! PetscInt
+       PetscScalar g ! PetscScalar
+       PetscScalar h ! PetscScalar
+       PetscSubcomm i ! PetscSubcomm
+       PetscInt j ! PetscInt
+       PetscBool k ! PetscBool
+       PetscErrorCode z
+       end subroutine BVDotQuadrature
+      subroutine BVTraceQuadrature(a,b,c,d,e,f,g,h,i,j,z)
+       import tPetscSubcomm,tBV,tVecScatter
+       BV a ! BV
+       BV b ! BV
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscScalar e ! PetscScalar
+       VecScatter f ! VecScatter
+       PetscSubcomm g ! PetscSubcomm
+       PetscInt h ! PetscInt
+       PetscBool i ! PetscBool
+       PetscReal j ! PetscReal
+       PetscErrorCode z
+       end subroutine BVTraceQuadrature
+      subroutine BVSVDAndRank(a,b,c,d,e,f,g,h,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscReal d ! PetscReal
+       BVSVDMethod e ! BVSVDMethod
+       PetscScalar f ! PetscScalar
+       PetscReal g ! PetscReal
+       PetscInt h ! PetscInt
+       PetscErrorCode z
+       end subroutine BVSVDAndRank
+      subroutine BVCISSResizeBases(a,b,c,d,e,f,g,z)
+       import tBV
+       BV a ! BV
+       BV b ! BV
+       BV c ! BV
+       PetscInt d ! PetscInt
+       PetscInt e ! PetscInt
+       PetscInt f ! PetscInt
+       PetscInt g ! PetscInt
+       PetscErrorCode z
+       end subroutine BVCISSResizeBases
+      subroutine BVBiorthogonalizeColumn(a,b,c,z)
+       import tBV
+       BV a ! BV
+       BV b ! BV
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine BVBiorthogonalizeColumn
+      subroutine BVBiorthonormalizeColumn(a,b,c,d,z)
+       import tBV
+       BV a ! BV
+       BV b ! BV
+       PetscInt c ! PetscInt
+       PetscReal d ! PetscReal
+       PetscErrorCode z
+       end subroutine BVBiorthonormalizeColumn
+      subroutine BVDot(a,b,c,z)
+       import tMat,tBV
+       BV a ! BV
+       BV b ! BV
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine BVDot
+      subroutine BVDotVec(a,b,c,z)
+       import tVec,tBV
+       BV a ! BV
+       Vec b ! Vec
+       PetscScalar c (*) ! PetscScalar
+       PetscErrorCode z
+       end subroutine BVDotVec
+      subroutine BVDotVecBegin(a,b,c,z)
+       import tVec,tBV
+       BV a ! BV
+       Vec b ! Vec
+       PetscScalar c ! PetscScalar
+       PetscErrorCode z
+       end subroutine BVDotVecBegin
+      subroutine BVDotVecEnd(a,b,c,z)
+       import tVec,tBV
+       BV a ! BV
+       Vec b ! Vec
+       PetscScalar c ! PetscScalar
+       PetscErrorCode z
+       end subroutine BVDotVecEnd
+      subroutine BVDotColumn(a,b,c,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscScalar c ! PetscScalar
+       PetscErrorCode z
+       end subroutine BVDotColumn
+      subroutine BVDotColumnBegin(a,b,c,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscScalar c ! PetscScalar
+       PetscErrorCode z
+       end subroutine BVDotColumnBegin
+      subroutine BVDotColumnEnd(a,b,c,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscScalar c ! PetscScalar
+       PetscErrorCode z
+       end subroutine BVDotColumnEnd
+      subroutine BVNorm(a,b,c,z)
+       import tBV
+       BV a ! BV
+       NormType b ! NormType
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine BVNorm
+      subroutine BVNormVec(a,b,c,d,z)
+       import tVec,tBV
+       BV a ! BV
+       Vec b ! Vec
+       NormType c ! NormType
+       PetscReal d ! PetscReal
+       PetscErrorCode z
+       end subroutine BVNormVec
+      subroutine BVNormVecBegin(a,b,c,d,z)
+       import tVec,tBV
+       BV a ! BV
+       Vec b ! Vec
+       NormType c ! NormType
+       PetscReal d ! PetscReal
+       PetscErrorCode z
+       end subroutine BVNormVecBegin
+      subroutine BVNormVecEnd(a,b,c,d,z)
+       import tVec,tBV
+       BV a ! BV
+       Vec b ! Vec
+       NormType c ! NormType
+       PetscReal d ! PetscReal
+       PetscErrorCode z
+       end subroutine BVNormVecEnd
+      subroutine BVNormColumn(a,b,c,d,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       NormType c ! NormType
+       PetscReal d ! PetscReal
+       PetscErrorCode z
+       end subroutine BVNormColumn
+      subroutine BVNormColumnBegin(a,b,c,d,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       NormType c ! NormType
+       PetscReal d ! PetscReal
+       PetscErrorCode z
+       end subroutine BVNormColumnBegin
+      subroutine BVNormColumnEnd(a,b,c,d,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       NormType c ! NormType
+       PetscReal d ! PetscReal
+       PetscErrorCode z
+       end subroutine BVNormColumnEnd
+      subroutine BVNormalize(a,b,z)
+       import tBV
+       BV a ! BV
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine BVNormalize
+      subroutine BVMatProject(a,b,c,d,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       BV c ! BV
+       Mat d ! Mat
+       PetscErrorCode z
+       end subroutine BVMatProject
+      subroutine BVCreate(a,b,z)
+       import tBV
+       MPI_Comm a ! MPI_Comm
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine BVCreate
+      subroutine BVCreateFromMat(a,b,z)
+       import tMat,tBV
+       Mat a ! Mat
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine BVCreateFromMat
+      subroutine BVInsertVec(a,b,c,z)
+       import tVec,tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       Vec c ! Vec
+       PetscErrorCode z
+       end subroutine BVInsertVec
+      subroutine BVInsertVecs(a,b,c,d,e,z)
+       import tVec,tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       Vec d ! Vec
+       PetscBool e ! PetscBool
+       PetscErrorCode z
+       end subroutine BVInsertVecs
+      subroutine BVInsertConstraints(a,b,c,z)
+       import tVec,tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       Vec c ! Vec
+       PetscErrorCode z
+       end subroutine BVInsertConstraints
+      subroutine BVMult(a,b,c,d,e,z)
+       import tMat,tBV
+       BV a ! BV
+       PetscScalar b ! PetscScalar
+       PetscScalar c ! PetscScalar
+       BV d ! BV
+       Mat e ! Mat
+       PetscErrorCode z
+       end subroutine BVMult
+      subroutine BVMultVec(a,b,c,d,e,z)
+       import tVec,tBV
+       BV a ! BV
+       PetscScalar b ! PetscScalar
+       PetscScalar c ! PetscScalar
+       Vec d ! Vec
+       PetscScalar e (*) ! PetscScalar
+       PetscErrorCode z
+       end subroutine BVMultVec
+      subroutine BVMultColumn(a,b,c,d,e,z)
+       import tBV
+       BV a ! BV
+       PetscScalar b ! PetscScalar
+       PetscScalar c ! PetscScalar
+       PetscInt d ! PetscInt
+       PetscScalar e ! PetscScalar
+       PetscErrorCode z
+       end subroutine BVMultColumn
+      subroutine BVMultInPlace(a,b,c,d,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine BVMultInPlace
+      subroutine BVMultInPlaceHermitianTranspose(a,b,c,d,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine BVMultInPlaceHermitianTranspose
+      subroutine BVScale(a,b,z)
+       import tBV
+       BV a ! BV
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine BVScale
+      subroutine BVScaleColumn(a,b,c,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscScalar c ! PetscScalar
+       PetscErrorCode z
+       end subroutine BVScaleColumn
+      subroutine BVSetRandom(a,z)
+       import tBV
+       BV a ! BV
+       PetscErrorCode z
+       end subroutine BVSetRandom
+      subroutine BVSetRandomColumn(a,b,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine BVSetRandomColumn
+      subroutine BVSetRandomNormal(a,z)
+       import tBV
+       BV a ! BV
+       PetscErrorCode z
+       end subroutine BVSetRandomNormal
+      subroutine BVSetRandomSign(a,z)
+       import tBV
+       BV a ! BV
+       PetscErrorCode z
+       end subroutine BVSetRandomSign
+      subroutine BVSetRandomCond(a,b,z)
+       import tBV
+       BV a ! BV
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine BVSetRandomCond
+      subroutine BVMatMult(a,b,c,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       BV c ! BV
+       PetscErrorCode z
+       end subroutine BVMatMult
+      subroutine BVMatMultTranspose(a,b,c,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       BV c ! BV
+       PetscErrorCode z
+       end subroutine BVMatMultTranspose
+      subroutine BVMatMultHermitianTranspose(a,b,c,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       BV c ! BV
+       PetscErrorCode z
+       end subroutine BVMatMultHermitianTranspose
+      subroutine BVMatMultColumn(a,b,c,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine BVMatMultColumn
+      subroutine BVMatMultTransposeColumn(a,b,c,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine BVMatMultTransposeColumn
+      subroutine BVMatMultHermitianTransposeColumn(a,b,c,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine BVMatMultHermitianTransposeColumn
+      subroutine BVSetSizes(a,b,c,d,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine BVSetSizes
+      subroutine BVSetSizesFromVec(a,b,c,z)
+       import tVec,tBV
+       BV a ! BV
+       Vec b ! Vec
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine BVSetSizesFromVec
+      subroutine BVGetSizes(a,b,c,d,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine BVGetSizes
+      subroutine BVSetNumConstraints(a,b,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine BVSetNumConstraints
+      subroutine BVGetNumConstraints(a,b,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine BVGetNumConstraints
+      subroutine BVResize(a,b,c,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscBool c ! PetscBool
+       PetscErrorCode z
+       end subroutine BVResize
+      subroutine BVSetActiveColumns(a,b,c,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine BVSetActiveColumns
+      subroutine BVGetActiveColumns(a,b,c,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine BVGetActiveColumns
+      subroutine BVSetMatrix(a,b,c,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       PetscBool c ! PetscBool
+       PetscErrorCode z
+       end subroutine BVSetMatrix
+      subroutine BVGetMatrix(a,b,c,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       PetscBool c ! PetscBool
+       PetscErrorCode z
+       end subroutine BVGetMatrix
+      subroutine BVApplyMatrix(a,b,c,z)
+       import tVec,tBV
+       BV a ! BV
+       Vec b ! Vec
+       Vec c ! Vec
+       PetscErrorCode z
+       end subroutine BVApplyMatrix
+      subroutine BVApplyMatrixBV(a,b,z)
+       import tBV
+       BV a ! BV
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine BVApplyMatrixBV
+      subroutine BVSetSignature(a,b,z)
+       import tVec,tBV
+       BV a ! BV
+       Vec b ! Vec
+       PetscErrorCode z
+       end subroutine BVSetSignature
+      subroutine BVGetSignature(a,b,z)
+       import tVec,tBV
+       BV a ! BV
+       Vec b ! Vec
+       PetscErrorCode z
+       end subroutine BVGetSignature
+      subroutine BVSetBufferVec(a,b,z)
+       import tVec,tBV
+       BV a ! BV
+       Vec b ! Vec
+       PetscErrorCode z
+       end subroutine BVSetBufferVec
+      subroutine BVGetBufferVec(a,b,z)
+       import tVec,tBV
+       BV a ! BV
+       Vec b ! Vec
+       PetscErrorCode z
+       end subroutine BVGetBufferVec
+      subroutine BVSetRandomContext(a,b,z)
+       import tPetscRandom,tBV
+       BV a ! BV
+       PetscRandom b ! PetscRandom
+       PetscErrorCode z
+       end subroutine BVSetRandomContext
+      subroutine BVGetRandomContext(a,b,z)
+       import tPetscRandom,tBV
+       BV a ! BV
+       PetscRandom b ! PetscRandom
+       PetscErrorCode z
+       end subroutine BVGetRandomContext
+      subroutine BVSetFromOptions(a,z)
+       import tBV
+       BV a ! BV
+       PetscErrorCode z
+       end subroutine BVSetFromOptions
+      subroutine BVSetOrthogonalization(a,b,c,d,e,z)
+       import tBV
+       BV a ! BV
+       BVOrthogType b ! BVOrthogType
+       BVOrthogRefineType c ! BVOrthogRefineType
+       PetscReal d ! PetscReal
+       BVOrthogBlockType e ! BVOrthogBlockType
+       PetscErrorCode z
+       end subroutine BVSetOrthogonalization
+      subroutine BVGetOrthogonalization(a,b,c,d,e,z)
+       import tBV
+       BV a ! BV
+       BVOrthogType b ! BVOrthogType
+       BVOrthogRefineType c ! BVOrthogRefineType
+       PetscReal d ! PetscReal
+       BVOrthogBlockType e ! BVOrthogBlockType
+       PetscErrorCode z
+       end subroutine BVGetOrthogonalization
+      subroutine BVSetMatMultMethod(a,b,z)
+       import tBV
+       BV a ! BV
+       BVMatMultType b ! BVMatMultType
+       PetscErrorCode z
+       end subroutine BVSetMatMultMethod
+      subroutine BVGetMatMultMethod(a,b,z)
+       import tBV
+       BV a ! BV
+       BVMatMultType b ! BVMatMultType
+       PetscErrorCode z
+       end subroutine BVGetMatMultMethod
+      subroutine BVGetColumn(a,b,c,z)
+       import tVec,tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       Vec c ! Vec
+       PetscErrorCode z
+       end subroutine BVGetColumn
+      subroutine BVRestoreColumn(a,b,c,z)
+       import tVec,tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       Vec c ! Vec
+       PetscErrorCode z
+       end subroutine BVRestoreColumn
+      subroutine BVCreateVec(a,b,z)
+       import tVec,tBV
+       BV a ! BV
+       Vec b ! Vec
+       PetscErrorCode z
+       end subroutine BVCreateVec
+      subroutine BVCreateMat(a,b,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine BVCreateMat
+      subroutine BVGetMat(a,b,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine BVGetMat
+      subroutine BVRestoreMat(a,b,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine BVRestoreMat
+      subroutine BVDuplicate(a,b,z)
+       import tBV
+       BV a ! BV
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine BVDuplicate
+      subroutine BVDuplicateResize(a,b,c,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       BV c ! BV
+       PetscErrorCode z
+       end subroutine BVDuplicateResize
+      subroutine BVGetCachedBV(a,b,z)
+       import tBV
+       BV a ! BV
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine BVGetCachedBV
+      subroutine BVCopy(a,b,z)
+       import tBV
+       BV a ! BV
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine BVCopy
+      subroutine BVCopyVec(a,b,c,z)
+       import tVec,tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       Vec c ! Vec
+       PetscErrorCode z
+       end subroutine BVCopyVec
+      subroutine BVCopyColumn(a,b,c,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine BVCopyColumn
+      subroutine BVGetSplit(a,b,c,z)
+       import tBV
+       BV a ! BV
+       BV b ! BV
+       BV c ! BV
+       PetscErrorCode z
+       end subroutine BVGetSplit
+      subroutine BVRestoreSplit(a,b,c,z)
+       import tBV
+       BV a ! BV
+       BV b ! BV
+       BV c ! BV
+       PetscErrorCode z
+       end subroutine BVRestoreSplit
+      subroutine BVSetDefiniteTolerance(a,b,z)
+       import tBV
+       BV a ! BV
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine BVSetDefiniteTolerance
+      subroutine BVGetDefiniteTolerance(a,b,z)
+       import tBV
+       BV a ! BV
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine BVGetDefiniteTolerance
+      subroutine BVMatArnoldi(a,b,c,d,e,f,g,z)
+       import tMat,tBV
+       BV a ! BV
+       Mat b ! Mat
+       Mat c ! Mat
+       PetscInt d ! PetscInt
+       PetscInt e ! PetscInt
+       PetscReal f ! PetscReal
+       PetscBool g ! PetscBool
+       PetscErrorCode z
+       end subroutine BVMatArnoldi
+      subroutine BVTensorBuildFirstColumn(a,b,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine BVTensorBuildFirstColumn
+      subroutine BVTensorCompress(a,b,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine BVTensorCompress
+      subroutine BVTensorGetDegree(a,b,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine BVTensorGetDegree
+      subroutine BVCreateTensor(a,b,c,z)
+       import tBV
+       BV a ! BV
+       PetscInt b ! PetscInt
+       BV c ! BV
+       PetscErrorCode z
+       end subroutine BVCreateTensor

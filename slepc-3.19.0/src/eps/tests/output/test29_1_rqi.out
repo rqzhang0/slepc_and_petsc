@@ -1,0 +1,14 @@
+
+Generalized eigenproblem stored in file.
+
+ Reading REAL matrices from binary files...
+
+ Number of converged eigenpairs: 2
+
+           k            ||Ax-kBx||         ||y'A-y'Bk||
+   ---------------- ------------------ ------------------
+   -2140.976527          removed            removed
+   -1712.811588          removed            removed
+
+  Level of bi-orthogonality of eigenvectors < 100*eps
+

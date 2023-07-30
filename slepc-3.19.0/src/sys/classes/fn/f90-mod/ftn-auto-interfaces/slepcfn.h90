@@ -1,0 +1,112 @@
+      subroutine FNPhiSetIndex(a,b,z)
+       import tFN
+       FN a ! FN
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine FNPhiSetIndex
+      subroutine FNPhiGetIndex(a,b,z)
+       import tFN
+       FN a ! FN
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine FNPhiGetIndex
+      subroutine FNCreate(a,b,z)
+       import tFN
+       MPI_Comm a ! MPI_Comm
+       FN b ! FN
+       PetscErrorCode z
+       end subroutine FNCreate
+      subroutine FNSetScale(a,b,c,z)
+       import tFN
+       FN a ! FN
+       PetscScalar b ! PetscScalar
+       PetscScalar c ! PetscScalar
+       PetscErrorCode z
+       end subroutine FNSetScale
+      subroutine FNGetScale(a,b,c,z)
+       import tFN
+       FN a ! FN
+       PetscScalar b ! PetscScalar
+       PetscScalar c ! PetscScalar
+       PetscErrorCode z
+       end subroutine FNGetScale
+      subroutine FNSetMethod(a,b,z)
+       import tFN
+       FN a ! FN
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine FNSetMethod
+      subroutine FNGetMethod(a,b,z)
+       import tFN
+       FN a ! FN
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine FNGetMethod
+      subroutine FNSetParallel(a,b,z)
+       import tFN
+       FN a ! FN
+       FNParallelType b ! FNParallelType
+       PetscErrorCode z
+       end subroutine FNSetParallel
+      subroutine FNGetParallel(a,b,z)
+       import tFN
+       FN a ! FN
+       FNParallelType b ! FNParallelType
+       PetscErrorCode z
+       end subroutine FNGetParallel
+      subroutine FNEvaluateFunction(a,b,c,z)
+       import tFN
+       FN a ! FN
+       PetscScalar b ! PetscScalar
+       PetscScalar c ! PetscScalar
+       PetscErrorCode z
+       end subroutine FNEvaluateFunction
+      subroutine FNEvaluateDerivative(a,b,c,z)
+       import tFN
+       FN a ! FN
+       PetscScalar b ! PetscScalar
+       PetscScalar c ! PetscScalar
+       PetscErrorCode z
+       end subroutine FNEvaluateDerivative
+      subroutine FNEvaluateFunctionMat(a,b,c,z)
+       import tMat,tFN
+       FN a ! FN
+       Mat b ! Mat
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine FNEvaluateFunctionMat
+      subroutine FNEvaluateFunctionMatVec(a,b,c,z)
+       import tMat,tVec,tFN
+       FN a ! FN
+       Mat b ! Mat
+       Vec c ! Vec
+       PetscErrorCode z
+       end subroutine FNEvaluateFunctionMatVec
+      subroutine FNSetFromOptions(a,z)
+       import tFN
+       FN a ! FN
+       PetscErrorCode z
+       end subroutine FNSetFromOptions
+      subroutine FNDuplicate(a,b,c,z)
+       import tFN
+       FN a ! FN
+       integer b ! MPI_Comm
+       FN c ! FN
+       PetscErrorCode z
+       end subroutine FNDuplicate
+      subroutine FNCombineSetChildren(a,b,c,d,z)
+       import tFN
+       FN a ! FN
+       FNCombineType b ! FNCombineType
+       FN c ! FN
+       FN d ! FN
+       PetscErrorCode z
+       end subroutine FNCombineSetChildren
+      subroutine FNCombineGetChildren(a,b,c,d,z)
+       import tFN
+       FN a ! FN
+       FNCombineType b ! FNCombineType
+       FN c ! FN
+       FN d ! FN
+       PetscErrorCode z
+       end subroutine FNCombineGetChildren

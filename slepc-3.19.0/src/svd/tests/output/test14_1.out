@@ -1,0 +1,9 @@
+
+Rectangular bidiagonal matrix, m=20 n=22
+
+ All requested singular values computed up to the required tolerance:
+     2.99254, 2.97023, 2.93324
+
+ All requested singular values computed up to the required tolerance:
+     2.99205, 2.96825, 2.92879
+

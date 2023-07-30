@@ -1,0 +1,376 @@
+      subroutine STReset(a,z)
+       import tST
+       ST a ! ST
+       PetscErrorCode z
+       end subroutine STReset
+      subroutine STCreate(a,b,z)
+       import tST
+       MPI_Comm a ! MPI_Comm
+       ST b ! ST
+       PetscErrorCode z
+       end subroutine STCreate
+      subroutine STSetMatrices(a,b,c,z)
+       import tMat,tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       Mat c (*) ! Mat
+       PetscErrorCode z
+       end subroutine STSetMatrices
+      subroutine STGetMatrix(a,b,c,z)
+       import tMat,tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine STGetMatrix
+      subroutine STGetMatrixTransformed(a,b,c,z)
+       import tMat,tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine STGetMatrixTransformed
+      subroutine STGetNumMatrices(a,b,z)
+       import tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine STGetNumMatrices
+      subroutine STResetMatrixState(a,z)
+       import tST
+       ST a ! ST
+       PetscErrorCode z
+       end subroutine STResetMatrixState
+      subroutine STSetPreconditionerMat(a,b,z)
+       import tMat,tST
+       ST a ! ST
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine STSetPreconditionerMat
+      subroutine STGetPreconditionerMat(a,b,z)
+       import tMat,tST
+       ST a ! ST
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine STGetPreconditionerMat
+      subroutine STSetSplitPreconditioner(a,b,c,d,z)
+       import tMat,tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       Mat c (*) ! Mat
+       MatStructure d ! MatStructure
+       PetscErrorCode z
+       end subroutine STSetSplitPreconditioner
+      subroutine STGetSplitPreconditionerTerm(a,b,c,z)
+       import tMat,tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine STGetSplitPreconditionerTerm
+      subroutine STGetSplitPreconditionerInfo(a,b,c,z)
+       import tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       MatStructure c ! MatStructure
+       PetscErrorCode z
+       end subroutine STGetSplitPreconditionerInfo
+      subroutine STSetShift(a,b,z)
+       import tST
+       ST a ! ST
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine STSetShift
+      subroutine STGetShift(a,b,z)
+       import tST
+       ST a ! ST
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine STGetShift
+      subroutine STSetDefaultShift(a,b,z)
+       import tST
+       ST a ! ST
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine STSetDefaultShift
+      subroutine STScaleShift(a,b,z)
+       import tST
+       ST a ! ST
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine STScaleShift
+      subroutine STSetBalanceMatrix(a,b,z)
+       import tVec,tST
+       ST a ! ST
+       Vec b ! Vec
+       PetscErrorCode z
+       end subroutine STSetBalanceMatrix
+      subroutine STGetBalanceMatrix(a,b,z)
+       import tVec,tST
+       ST a ! ST
+       Vec b ! Vec
+       PetscErrorCode z
+       end subroutine STGetBalanceMatrix
+      subroutine STMatGetSize(a,b,c,z)
+       import tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine STMatGetSize
+      subroutine STMatGetLocalSize(a,b,c,z)
+       import tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine STMatGetLocalSize
+      subroutine STApply(a,b,c,z)
+       import tVec,tST
+       ST a ! ST
+       Vec b ! Vec
+       Vec c ! Vec
+       PetscErrorCode z
+       end subroutine STApply
+      subroutine STApplyMat(a,b,c,z)
+       import tMat,tST
+       ST a ! ST
+       Mat b ! Mat
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine STApplyMat
+      subroutine STApplyTranspose(a,b,c,z)
+       import tVec,tST
+       ST a ! ST
+       Vec b ! Vec
+       Vec c ! Vec
+       PetscErrorCode z
+       end subroutine STApplyTranspose
+      subroutine STApplyHermitianTranspose(a,b,c,z)
+       import tVec,tST
+       ST a ! ST
+       Vec b ! Vec
+       Vec c ! Vec
+       PetscErrorCode z
+       end subroutine STApplyHermitianTranspose
+      subroutine STGetBilinearForm(a,b,z)
+       import tMat,tST
+       ST a ! ST
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine STGetBilinearForm
+      subroutine STGetOperator(a,b,z)
+       import tMat,tST
+       ST a ! ST
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine STGetOperator
+      subroutine STRestoreOperator(a,b,z)
+       import tMat,tST
+       ST a ! ST
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine STRestoreOperator
+      subroutine STSetUp(a,z)
+       import tST
+       ST a ! ST
+       PetscErrorCode z
+       end subroutine STSetUp
+      subroutine STPostSolve(a,z)
+       import tST
+       ST a ! ST
+       PetscErrorCode z
+       end subroutine STPostSolve
+      subroutine STBackTransform(a,b,c,d,z)
+       import tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       PetscScalar c ! PetscScalar
+       PetscScalar d ! PetscScalar
+       PetscErrorCode z
+       end subroutine STBackTransform
+      subroutine STIsInjective(a,b,z)
+       import tST
+       ST a ! ST
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine STIsInjective
+      subroutine STMatSetUp(a,b,c,z)
+       import tST
+       ST a ! ST
+       PetscScalar b ! PetscScalar
+       PetscScalar c ! PetscScalar
+       PetscErrorCode z
+       end subroutine STMatSetUp
+      subroutine STSetWorkVecs(a,b,z)
+       import tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine STSetWorkVecs
+      subroutine STMatMult(a,b,c,d,z)
+       import tVec,tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       Vec c ! Vec
+       Vec d ! Vec
+       PetscErrorCode z
+       end subroutine STMatMult
+      subroutine STMatMultTranspose(a,b,c,d,z)
+       import tVec,tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       Vec c ! Vec
+       Vec d ! Vec
+       PetscErrorCode z
+       end subroutine STMatMultTranspose
+      subroutine STMatSolve(a,b,c,z)
+       import tVec,tST
+       ST a ! ST
+       Vec b ! Vec
+       Vec c ! Vec
+       PetscErrorCode z
+       end subroutine STMatSolve
+      subroutine STMatMatSolve(a,b,c,z)
+       import tMat,tST
+       ST a ! ST
+       Mat b ! Mat
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine STMatMatSolve
+      subroutine STMatSolveTranspose(a,b,c,z)
+       import tVec,tST
+       ST a ! ST
+       Vec b ! Vec
+       Vec c ! Vec
+       PetscErrorCode z
+       end subroutine STMatSolveTranspose
+      subroutine STSetKSP(a,b,z)
+       import tKSP,tST
+       ST a ! ST
+       KSP b ! KSP
+       PetscErrorCode z
+       end subroutine STSetKSP
+      subroutine STGetKSP(a,b,z)
+       import tKSP,tST
+       ST a ! ST
+       KSP b ! KSP
+       PetscErrorCode z
+       end subroutine STGetKSP
+      subroutine STCheckNullSpace(a,b,z)
+       import tST,tBV
+       ST a ! ST
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine STCheckNullSpace
+      subroutine STSetFromOptions(a,z)
+       import tST
+       ST a ! ST
+       PetscErrorCode z
+       end subroutine STSetFromOptions
+      subroutine STSetMatStructure(a,b,z)
+       import tST
+       ST a ! ST
+       MatStructure b ! MatStructure
+       PetscErrorCode z
+       end subroutine STSetMatStructure
+      subroutine STGetMatStructure(a,b,z)
+       import tST
+       ST a ! ST
+       MatStructure b ! MatStructure
+       PetscErrorCode z
+       end subroutine STGetMatStructure
+      subroutine STSetMatMode(a,b,z)
+       import tST
+       ST a ! ST
+       STMatMode b ! STMatMode
+       PetscErrorCode z
+       end subroutine STSetMatMode
+      subroutine STGetMatMode(a,b,z)
+       import tST
+       ST a ! ST
+       STMatMode b ! STMatMode
+       PetscErrorCode z
+       end subroutine STGetMatMode
+      subroutine STSetTransform(a,b,z)
+       import tST
+       ST a ! ST
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine STSetTransform
+      subroutine STGetTransform(a,b,z)
+       import tST
+       ST a ! ST
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine STGetTransform
+      subroutine STFilterSetInterval(a,b,c,z)
+       import tST
+       ST a ! ST
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine STFilterSetInterval
+      subroutine STFilterGetInterval(a,b,c,z)
+       import tST
+       ST a ! ST
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine STFilterGetInterval
+      subroutine STFilterSetRange(a,b,c,z)
+       import tST
+       ST a ! ST
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine STFilterSetRange
+      subroutine STFilterGetRange(a,b,c,z)
+       import tST
+       ST a ! ST
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine STFilterGetRange
+      subroutine STFilterSetDegree(a,b,z)
+       import tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine STFilterSetDegree
+      subroutine STFilterGetDegree(a,b,z)
+       import tST
+       ST a ! ST
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine STFilterGetDegree
+      subroutine STFilterGetThreshold(a,b,z)
+       import tST
+       ST a ! ST
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine STFilterGetThreshold
+      subroutine STPrecondSetKSPHasMat(a,b,z)
+       import tST
+       ST a ! ST
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine STPrecondSetKSPHasMat
+      subroutine STPrecondGetKSPHasMat(a,b,z)
+       import tST
+       ST a ! ST
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine STPrecondGetKSPHasMat
+      subroutine STCayleySetAntishift(a,b,z)
+       import tST
+       ST a ! ST
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine STCayleySetAntishift
+      subroutine STCayleyGetAntishift(a,b,z)
+       import tST
+       ST a ! ST
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine STCayleyGetAntishift

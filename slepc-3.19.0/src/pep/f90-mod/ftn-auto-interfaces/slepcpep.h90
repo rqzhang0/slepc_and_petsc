@@ -1,0 +1,604 @@
+      subroutine PEPCISSSetSizes(a,b,c,d,e,f,g,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscInt e ! PetscInt
+       PetscInt f ! PetscInt
+       PetscBool g ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPCISSSetSizes
+      subroutine PEPCISSGetSizes(a,b,c,d,e,f,g,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscInt e ! PetscInt
+       PetscInt f ! PetscInt
+       PetscBool g ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPCISSGetSizes
+      subroutine PEPCISSSetThreshold(a,b,c,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPCISSSetThreshold
+      subroutine PEPCISSGetThreshold(a,b,c,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPCISSGetThreshold
+      subroutine PEPCISSSetRefinement(a,b,c,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine PEPCISSSetRefinement
+      subroutine PEPCISSGetRefinement(a,b,c,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine PEPCISSGetRefinement
+      subroutine PEPCISSSetExtraction(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPCISSExtraction b ! PEPCISSExtraction
+       PetscErrorCode z
+       end subroutine PEPCISSSetExtraction
+      subroutine PEPCISSGetExtraction(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPCISSExtraction b ! PEPCISSExtraction
+       PetscErrorCode z
+       end subroutine PEPCISSGetExtraction
+      subroutine PEPLinearSetLinearization(a,b,c,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPLinearSetLinearization
+      subroutine PEPLinearGetLinearization(a,b,c,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPLinearGetLinearization
+      subroutine PEPLinearSetExplicitMatrix(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPLinearSetExplicitMatrix
+      subroutine PEPLinearGetExplicitMatrix(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPLinearGetExplicitMatrix
+      subroutine PEPLinearSetEPS(a,b,z)
+       import tEPS,tPEP
+       PEP a ! PEP
+       EPS b ! EPS
+       PetscErrorCode z
+       end subroutine PEPLinearSetEPS
+      subroutine PEPLinearGetEPS(a,b,z)
+       import tEPS,tPEP
+       PEP a ! PEP
+       EPS b ! EPS
+       PetscErrorCode z
+       end subroutine PEPLinearGetEPS
+      subroutine PEPTOARSetRestart(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPTOARSetRestart
+      subroutine PEPTOARGetRestart(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPTOARGetRestart
+      subroutine PEPTOARSetLocking(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPTOARSetLocking
+      subroutine PEPTOARGetLocking(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPTOARGetLocking
+      subroutine PEPJDSetRestart(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPJDSetRestart
+      subroutine PEPJDGetRestart(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPJDGetRestart
+      subroutine PEPJDSetFix(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPJDSetFix
+      subroutine PEPJDGetFix(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPJDGetFix
+      subroutine PEPJDSetReusePreconditioner(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPJDSetReusePreconditioner
+      subroutine PEPJDGetReusePreconditioner(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPJDGetReusePreconditioner
+      subroutine PEPJDSetMinimalityIndex(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine PEPJDSetMinimalityIndex
+      subroutine PEPJDGetMinimalityIndex(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine PEPJDGetMinimalityIndex
+      subroutine PEPJDSetProjection(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPJDProjection b ! PEPJDProjection
+       PetscErrorCode z
+       end subroutine PEPJDSetProjection
+      subroutine PEPJDGetProjection(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPJDProjection b ! PEPJDProjection
+       PetscErrorCode z
+       end subroutine PEPJDGetProjection
+      subroutine PEPQArnoldiSetRestart(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPQArnoldiSetRestart
+      subroutine PEPQArnoldiGetRestart(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPQArnoldiGetRestart
+      subroutine PEPQArnoldiSetLocking(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPQArnoldiSetLocking
+      subroutine PEPQArnoldiGetLocking(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPQArnoldiGetLocking
+      subroutine PEPCheckDefiniteQEP(a,b,c,d,e,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscInt d ! PetscInt
+       PetscInt e ! PetscInt
+       PetscErrorCode z
+       end subroutine PEPCheckDefiniteQEP
+      subroutine PEPSTOARSetLocking(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPSTOARSetLocking
+      subroutine PEPSTOARGetLocking(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPSTOARGetLocking
+      subroutine PEPSTOARSetDetectZeros(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPSTOARSetDetectZeros
+      subroutine PEPSTOARGetDetectZeros(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPSTOARGetDetectZeros
+      subroutine PEPSTOARSetLinearization(a,b,c,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPSTOARSetLinearization
+      subroutine PEPSTOARGetLinearization(a,b,c,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPSTOARGetLinearization
+      subroutine PEPSTOARSetDimensions(a,b,c,d,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine PEPSTOARSetDimensions
+      subroutine PEPSTOARGetDimensions(a,b,c,d,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine PEPSTOARGetDimensions
+      subroutine PEPSTOARSetCheckEigenvalueType(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPSTOARSetCheckEigenvalueType
+      subroutine PEPSTOARGetCheckEigenvalueType(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPSTOARGetCheckEigenvalueType
+      subroutine PEPConvergedReasonViewFromOptions(a,z)
+       import tPEP
+       PEP a ! PEP
+       PetscErrorCode z
+       end subroutine PEPConvergedReasonViewFromOptions
+      subroutine PEPErrorViewFromOptions(a,z)
+       import tPEP
+       PEP a ! PEP
+       PetscErrorCode z
+       end subroutine PEPErrorViewFromOptions
+      subroutine PEPValuesViewFromOptions(a,z)
+       import tPEP
+       PEP a ! PEP
+       PetscErrorCode z
+       end subroutine PEPValuesViewFromOptions
+      subroutine PEPVectorsViewFromOptions(a,z)
+       import tPEP
+       PEP a ! PEP
+       PetscErrorCode z
+       end subroutine PEPVectorsViewFromOptions
+      subroutine PEPSetFromOptions(a,z)
+       import tPEP
+       PEP a ! PEP
+       PetscErrorCode z
+       end subroutine PEPSetFromOptions
+      subroutine PEPSetTolerances(a,b,c,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine PEPSetTolerances
+      subroutine PEPSetDimensions(a,b,c,d,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine PEPSetDimensions
+      subroutine PEPSetWhichEigenpairs(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPWhich b ! PEPWhich
+       PetscErrorCode z
+       end subroutine PEPSetWhichEigenpairs
+      subroutine PEPGetWhichEigenpairs(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPWhich b ! PEPWhich
+       PetscErrorCode z
+       end subroutine PEPGetWhichEigenpairs
+      subroutine PEPSetProblemType(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPProblemType b ! PEPProblemType
+       PetscErrorCode z
+       end subroutine PEPSetProblemType
+      subroutine PEPGetProblemType(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPProblemType b ! PEPProblemType
+       PetscErrorCode z
+       end subroutine PEPGetProblemType
+      subroutine PEPSetBasis(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPBasis b ! PEPBasis
+       PetscErrorCode z
+       end subroutine PEPSetBasis
+      subroutine PEPGetBasis(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPBasis b ! PEPBasis
+       PetscErrorCode z
+       end subroutine PEPGetBasis
+      subroutine PEPSetTrackAll(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPSetTrackAll
+      subroutine PEPGetTrackAll(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine PEPGetTrackAll
+      subroutine PEPSetConvergenceTest(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPConv b ! PEPConv
+       PetscErrorCode z
+       end subroutine PEPSetConvergenceTest
+      subroutine PEPGetConvergenceTest(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPConv b ! PEPConv
+       PetscErrorCode z
+       end subroutine PEPGetConvergenceTest
+      subroutine PEPSetStoppingTest(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPStop b ! PEPStop
+       PetscErrorCode z
+       end subroutine PEPSetStoppingTest
+      subroutine PEPGetStoppingTest(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPStop b ! PEPStop
+       PetscErrorCode z
+       end subroutine PEPGetStoppingTest
+      subroutine PEPSetScale(a,b,c,d,e,f,g,z)
+       import tPEP,tVec
+       PEP a ! PEP
+       PEPScale b ! PEPScale
+       PetscReal c ! PetscReal
+       Vec d ! Vec
+       Vec e ! Vec
+       PetscInt f ! PetscInt
+       PetscReal g ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPSetScale
+      subroutine PEPSetExtract(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPExtract b ! PEPExtract
+       PetscErrorCode z
+       end subroutine PEPSetExtract
+      subroutine PEPGetExtract(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPExtract b ! PEPExtract
+       PetscErrorCode z
+       end subroutine PEPGetExtract
+      subroutine PEPSetRefine(a,b,c,d,e,f,z)
+       import tPEP
+       PEP a ! PEP
+       PEPRefine b ! PEPRefine
+       PetscInt c ! PetscInt
+       PetscReal d ! PetscReal
+       PetscInt e ! PetscInt
+       PEPRefineScheme f ! PEPRefineScheme
+       PetscErrorCode z
+       end subroutine PEPSetRefine
+      subroutine PEPCreate(a,b,z)
+       import tPEP
+       MPI_Comm a ! MPI_Comm
+       PEP b ! PEP
+       PetscErrorCode z
+       end subroutine PEPCreate
+      subroutine PEPReset(a,z)
+       import tPEP
+       PEP a ! PEP
+       PetscErrorCode z
+       end subroutine PEPReset
+      subroutine PEPSetBV(a,b,z)
+       import tPEP,tBV
+       PEP a ! PEP
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine PEPSetBV
+      subroutine PEPGetBV(a,b,z)
+       import tPEP,tBV
+       PEP a ! PEP
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine PEPGetBV
+      subroutine PEPSetRG(a,b,z)
+       import tPEP,tRG
+       PEP a ! PEP
+       RG b ! RG
+       PetscErrorCode z
+       end subroutine PEPSetRG
+      subroutine PEPGetRG(a,b,z)
+       import tPEP,tRG
+       PEP a ! PEP
+       RG b ! RG
+       PetscErrorCode z
+       end subroutine PEPGetRG
+      subroutine PEPSetDS(a,b,z)
+       import tDS,tPEP
+       PEP a ! PEP
+       DS b ! DS
+       PetscErrorCode z
+       end subroutine PEPSetDS
+      subroutine PEPGetDS(a,b,z)
+       import tDS,tPEP
+       PEP a ! PEP
+       DS b ! DS
+       PetscErrorCode z
+       end subroutine PEPGetDS
+      subroutine PEPSetST(a,b,z)
+       import tPEP,tST
+       PEP a ! PEP
+       ST b ! ST
+       PetscErrorCode z
+       end subroutine PEPSetST
+      subroutine PEPGetST(a,b,z)
+       import tPEP,tST
+       PEP a ! PEP
+       ST b ! ST
+       PetscErrorCode z
+       end subroutine PEPGetST
+      subroutine PEPRefineGetKSP(a,b,z)
+       import tKSP,tPEP
+       PEP a ! PEP
+       KSP b ! KSP
+       PetscErrorCode z
+       end subroutine PEPRefineGetKSP
+      subroutine PEPSetTarget(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine PEPSetTarget
+      subroutine PEPGetTarget(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine PEPGetTarget
+      subroutine PEPSetInterval(a,b,c,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPSetInterval
+      subroutine PEPGetInterval(a,b,c,z)
+       import tPEP
+       PEP a ! PEP
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPGetInterval
+      subroutine PEPSetWorkVecs(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine PEPSetWorkVecs
+      subroutine PEPMonitorCancel(a,z)
+       import tPEP
+       PEP a ! PEP
+       PetscErrorCode z
+       end subroutine PEPMonitorCancel
+      subroutine PEPSolve(a,z)
+       import tPEP
+       PEP a ! PEP
+       PetscErrorCode z
+       end subroutine PEPSolve
+      subroutine PEPGetIterationNumber(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine PEPGetIterationNumber
+      subroutine PEPGetConverged(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine PEPGetConverged
+      subroutine PEPGetConvergedReason(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PEPConvergedReason b ! PEPConvergedReason
+       PetscErrorCode z
+       end subroutine PEPGetConvergedReason
+      subroutine PEPGetErrorEstimate(a,b,c,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPGetErrorEstimate
+      subroutine PEPComputeError(a,b,c,d,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PEPErrorType c ! PEPErrorType
+       PetscReal d ! PetscReal
+       PetscErrorCode z
+       end subroutine PEPComputeError
+      subroutine PEPSetDSType(a,z)
+       import tPEP
+       PEP a ! PEP
+       PetscErrorCode z
+       end subroutine PEPSetDSType
+      subroutine PEPSetUp(a,z)
+       import tPEP
+       PEP a ! PEP
+       PetscErrorCode z
+       end subroutine PEPSetUp
+      subroutine PEPSetOperators(a,b,c,z)
+       import tMat,tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       Mat c (*) ! Mat
+       PetscErrorCode z
+       end subroutine PEPSetOperators
+      subroutine PEPGetOperators(a,b,c,z)
+       import tMat,tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine PEPGetOperators
+      subroutine PEPGetNumMatrices(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine PEPGetNumMatrices
+      subroutine PEPAllocateSolution(a,b,z)
+       import tPEP
+       PEP a ! PEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine PEPAllocateSolution

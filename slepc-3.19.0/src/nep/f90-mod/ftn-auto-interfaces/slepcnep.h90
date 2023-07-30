@@ -1,0 +1,670 @@
+      subroutine NEPInterpolSetInterpolation(a,b,c,z)
+       import tNEP
+       NEP a ! NEP
+       PetscReal b ! PetscReal
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPInterpolSetInterpolation
+      subroutine NEPInterpolGetInterpolation(a,b,c,z)
+       import tNEP
+       NEP a ! NEP
+       PetscReal b ! PetscReal
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPInterpolGetInterpolation
+      subroutine NEPInterpolSetPEP(a,b,z)
+       import tPEP,tNEP
+       NEP a ! NEP
+       PEP b ! PEP
+       PetscErrorCode z
+       end subroutine NEPInterpolSetPEP
+      subroutine NEPInterpolGetPEP(a,b,z)
+       import tPEP,tNEP
+       NEP a ! NEP
+       PEP b ! PEP
+       PetscErrorCode z
+       end subroutine NEPInterpolGetPEP
+      subroutine NEPRIISetMaximumIterations(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPRIISetMaximumIterations
+      subroutine NEPRIIGetMaximumIterations(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPRIIGetMaximumIterations
+      subroutine NEPRIISetLagPreconditioner(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPRIISetLagPreconditioner
+      subroutine NEPRIIGetLagPreconditioner(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPRIIGetLagPreconditioner
+      subroutine NEPRIISetConstCorrectionTol(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine NEPRIISetConstCorrectionTol
+      subroutine NEPRIIGetConstCorrectionTol(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine NEPRIIGetConstCorrectionTol
+      subroutine NEPRIISetHermitian(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine NEPRIISetHermitian
+      subroutine NEPRIIGetHermitian(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine NEPRIIGetHermitian
+      subroutine NEPRIISetDeflationThreshold(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine NEPRIISetDeflationThreshold
+      subroutine NEPRIIGetDeflationThreshold(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine NEPRIIGetDeflationThreshold
+      subroutine NEPRIISetKSP(a,b,z)
+       import tKSP,tNEP
+       NEP a ! NEP
+       KSP b ! KSP
+       PetscErrorCode z
+       end subroutine NEPRIISetKSP
+      subroutine NEPRIIGetKSP(a,b,z)
+       import tKSP,tNEP
+       NEP a ! NEP
+       KSP b ! KSP
+       PetscErrorCode z
+       end subroutine NEPRIIGetKSP
+      subroutine NEPSLPSetDeflationThreshold(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine NEPSLPSetDeflationThreshold
+      subroutine NEPSLPGetDeflationThreshold(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine NEPSLPGetDeflationThreshold
+      subroutine NEPSLPSetEPS(a,b,z)
+       import tEPS,tNEP
+       NEP a ! NEP
+       EPS b ! EPS
+       PetscErrorCode z
+       end subroutine NEPSLPSetEPS
+      subroutine NEPSLPGetEPS(a,b,z)
+       import tEPS,tNEP
+       NEP a ! NEP
+       EPS b ! EPS
+       PetscErrorCode z
+       end subroutine NEPSLPGetEPS
+      subroutine NEPSLPSetEPSLeft(a,b,z)
+       import tEPS,tNEP
+       NEP a ! NEP
+       EPS b ! EPS
+       PetscErrorCode z
+       end subroutine NEPSLPSetEPSLeft
+      subroutine NEPSLPGetEPSLeft(a,b,z)
+       import tEPS,tNEP
+       NEP a ! NEP
+       EPS b ! EPS
+       PetscErrorCode z
+       end subroutine NEPSLPGetEPSLeft
+      subroutine NEPSLPSetKSP(a,b,z)
+       import tKSP,tNEP
+       NEP a ! NEP
+       KSP b ! KSP
+       PetscErrorCode z
+       end subroutine NEPSLPSetKSP
+      subroutine NEPSLPGetKSP(a,b,z)
+       import tKSP,tNEP
+       NEP a ! NEP
+       KSP b ! KSP
+       PetscErrorCode z
+       end subroutine NEPSLPGetKSP
+      subroutine NEPNArnoldiSetLagPreconditioner(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPNArnoldiSetLagPreconditioner
+      subroutine NEPNArnoldiGetLagPreconditioner(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPNArnoldiGetLagPreconditioner
+      subroutine NEPNArnoldiSetKSP(a,b,z)
+       import tKSP,tNEP
+       NEP a ! NEP
+       KSP b ! KSP
+       PetscErrorCode z
+       end subroutine NEPNArnoldiSetKSP
+      subroutine NEPNArnoldiGetKSP(a,b,z)
+       import tKSP,tNEP
+       NEP a ! NEP
+       KSP b ! KSP
+       PetscErrorCode z
+       end subroutine NEPNArnoldiGetKSP
+      subroutine NEPSolve(a,z)
+       import tNEP
+       NEP a ! NEP
+       PetscErrorCode z
+       end subroutine NEPSolve
+      subroutine NEPProjectOperator(a,b,c,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPProjectOperator
+      subroutine NEPApplyFunction(a,b,c,d,e,f,g,z)
+       import tMat,tVec,tNEP
+       NEP a ! NEP
+       PetscScalar b ! PetscScalar
+       Vec c ! Vec
+       Vec d ! Vec
+       Vec e ! Vec
+       Mat f ! Mat
+       Mat g ! Mat
+       PetscErrorCode z
+       end subroutine NEPApplyFunction
+      subroutine NEPApplyAdjoint(a,b,c,d,e,f,g,z)
+       import tMat,tVec,tNEP
+       NEP a ! NEP
+       PetscScalar b ! PetscScalar
+       Vec c ! Vec
+       Vec d ! Vec
+       Vec e ! Vec
+       Mat f ! Mat
+       Mat g ! Mat
+       PetscErrorCode z
+       end subroutine NEPApplyAdjoint
+      subroutine NEPApplyJacobian(a,b,c,d,e,f,z)
+       import tMat,tVec,tNEP
+       NEP a ! NEP
+       PetscScalar b ! PetscScalar
+       Vec c ! Vec
+       Vec d ! Vec
+       Vec e ! Vec
+       Mat f ! Mat
+       PetscErrorCode z
+       end subroutine NEPApplyJacobian
+      subroutine NEPGetIterationNumber(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPGetIterationNumber
+      subroutine NEPGetConverged(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPGetConverged
+      subroutine NEPGetConvergedReason(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       NEPConvergedReason b ! NEPConvergedReason
+       PetscErrorCode z
+       end subroutine NEPGetConvergedReason
+      subroutine NEPGetLeftEigenvector(a,b,c,d,z)
+       import tVec,tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       Vec c ! Vec
+       Vec d ! Vec
+       PetscErrorCode z
+       end subroutine NEPGetLeftEigenvector
+      subroutine NEPGetErrorEstimate(a,b,c,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine NEPGetErrorEstimate
+      subroutine NEPComputeError(a,b,c,d,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       NEPErrorType c ! NEPErrorType
+       PetscReal d ! PetscReal
+       PetscErrorCode z
+       end subroutine NEPComputeError
+      subroutine NEPComputeFunction(a,b,c,d,z)
+       import tMat,tNEP
+       NEP a ! NEP
+       PetscScalar b ! PetscScalar
+       Mat c ! Mat
+       Mat d ! Mat
+       PetscErrorCode z
+       end subroutine NEPComputeFunction
+      subroutine NEPComputeJacobian(a,b,c,z)
+       import tMat,tNEP
+       NEP a ! NEP
+       PetscScalar b ! PetscScalar
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine NEPComputeJacobian
+      subroutine NEPSetFromOptions(a,z)
+       import tNEP
+       NEP a ! NEP
+       PetscErrorCode z
+       end subroutine NEPSetFromOptions
+      subroutine NEPSetTolerances(a,b,c,z)
+       import tNEP
+       NEP a ! NEP
+       PetscReal b ! PetscReal
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPSetTolerances
+      subroutine NEPSetDimensions(a,b,c,d,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPSetDimensions
+      subroutine NEPSetWhichEigenpairs(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       NEPWhich b ! NEPWhich
+       PetscErrorCode z
+       end subroutine NEPSetWhichEigenpairs
+      subroutine NEPGetWhichEigenpairs(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       NEPWhich b ! NEPWhich
+       PetscErrorCode z
+       end subroutine NEPGetWhichEigenpairs
+      subroutine NEPSetProblemType(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       NEPProblemType b ! NEPProblemType
+       PetscErrorCode z
+       end subroutine NEPSetProblemType
+      subroutine NEPGetProblemType(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       NEPProblemType b ! NEPProblemType
+       PetscErrorCode z
+       end subroutine NEPGetProblemType
+      subroutine NEPSetTwoSided(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine NEPSetTwoSided
+      subroutine NEPGetTwoSided(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine NEPGetTwoSided
+      subroutine NEPSetConvergenceTest(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       NEPConv b ! NEPConv
+       PetscErrorCode z
+       end subroutine NEPSetConvergenceTest
+      subroutine NEPGetConvergenceTest(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       NEPConv b ! NEPConv
+       PetscErrorCode z
+       end subroutine NEPGetConvergenceTest
+      subroutine NEPSetStoppingTest(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       NEPStop b ! NEPStop
+       PetscErrorCode z
+       end subroutine NEPSetStoppingTest
+      subroutine NEPGetStoppingTest(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       NEPStop b ! NEPStop
+       PetscErrorCode z
+       end subroutine NEPGetStoppingTest
+      subroutine NEPSetTrackAll(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine NEPSetTrackAll
+      subroutine NEPGetTrackAll(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine NEPGetTrackAll
+      subroutine NEPSetRefine(a,b,c,d,e,f,z)
+       import tNEP
+       NEP a ! NEP
+       NEPRefine b ! NEPRefine
+       PetscInt c ! PetscInt
+       PetscReal d ! PetscReal
+       PetscInt e ! PetscInt
+       NEPRefineScheme f ! NEPRefineScheme
+       PetscErrorCode z
+       end subroutine NEPSetRefine
+      subroutine NEPCreate(a,b,z)
+       import tNEP
+       MPI_Comm a ! MPI_Comm
+       NEP b ! NEP
+       PetscErrorCode z
+       end subroutine NEPCreate
+      subroutine NEPReset(a,z)
+       import tNEP
+       NEP a ! NEP
+       PetscErrorCode z
+       end subroutine NEPReset
+      subroutine NEPSetBV(a,b,z)
+       import tBV,tNEP
+       NEP a ! NEP
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine NEPSetBV
+      subroutine NEPGetBV(a,b,z)
+       import tBV,tNEP
+       NEP a ! NEP
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine NEPGetBV
+      subroutine NEPSetRG(a,b,z)
+       import tNEP,tRG
+       NEP a ! NEP
+       RG b ! RG
+       PetscErrorCode z
+       end subroutine NEPSetRG
+      subroutine NEPGetRG(a,b,z)
+       import tNEP,tRG
+       NEP a ! NEP
+       RG b ! RG
+       PetscErrorCode z
+       end subroutine NEPGetRG
+      subroutine NEPSetDS(a,b,z)
+       import tDS,tNEP
+       NEP a ! NEP
+       DS b ! DS
+       PetscErrorCode z
+       end subroutine NEPSetDS
+      subroutine NEPGetDS(a,b,z)
+       import tDS,tNEP
+       NEP a ! NEP
+       DS b ! DS
+       PetscErrorCode z
+       end subroutine NEPGetDS
+      subroutine NEPRefineGetKSP(a,b,z)
+       import tKSP,tNEP
+       NEP a ! NEP
+       KSP b ! KSP
+       PetscErrorCode z
+       end subroutine NEPRefineGetKSP
+      subroutine NEPSetTarget(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine NEPSetTarget
+      subroutine NEPGetTarget(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine NEPGetTarget
+      subroutine NEPSetSplitOperator(a,b,c,d,e,z)
+       import tMat,tFN,tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       Mat c (*) ! Mat
+       FN d (*) ! FN
+       MatStructure e ! MatStructure
+       PetscErrorCode z
+       end subroutine NEPSetSplitOperator
+      subroutine NEPGetSplitOperatorTerm(a,b,c,d,z)
+       import tMat,tFN,tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       Mat c ! Mat
+       FN d ! FN
+       PetscErrorCode z
+       end subroutine NEPGetSplitOperatorTerm
+      subroutine NEPGetSplitOperatorInfo(a,b,c,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       MatStructure c ! MatStructure
+       PetscErrorCode z
+       end subroutine NEPGetSplitOperatorInfo
+      subroutine NEPSetSplitPreconditioner(a,b,c,d,z)
+       import tMat,tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       Mat c (*) ! Mat
+       MatStructure d ! MatStructure
+       PetscErrorCode z
+       end subroutine NEPSetSplitPreconditioner
+      subroutine NEPGetSplitPreconditionerTerm(a,b,c,z)
+       import tMat,tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine NEPGetSplitPreconditionerTerm
+      subroutine NEPGetSplitPreconditionerInfo(a,b,c,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       MatStructure c ! MatStructure
+       PetscErrorCode z
+       end subroutine NEPGetSplitPreconditionerInfo
+      subroutine NEPConvergedReasonViewFromOptions(a,z)
+       import tNEP
+       NEP a ! NEP
+       PetscErrorCode z
+       end subroutine NEPConvergedReasonViewFromOptions
+      subroutine NEPErrorViewFromOptions(a,z)
+       import tNEP
+       NEP a ! NEP
+       PetscErrorCode z
+       end subroutine NEPErrorViewFromOptions
+      subroutine NEPValuesViewFromOptions(a,z)
+       import tNEP
+       NEP a ! NEP
+       PetscErrorCode z
+       end subroutine NEPValuesViewFromOptions
+      subroutine NEPVectorsViewFromOptions(a,z)
+       import tNEP
+       NEP a ! NEP
+       PetscErrorCode z
+       end subroutine NEPVectorsViewFromOptions
+      subroutine NEPSetWorkVecs(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPSetWorkVecs
+      subroutine NEPApplyResolvent(a,b,c,d,e,z)
+       import tVec,tNEP,tRG
+       NEP a ! NEP
+       RG b ! RG
+       PetscScalar c ! PetscScalar
+       Vec d ! Vec
+       Vec e ! Vec
+       PetscErrorCode z
+       end subroutine NEPApplyResolvent
+      subroutine NEPMonitorCancel(a,z)
+       import tNEP
+       NEP a ! NEP
+       PetscErrorCode z
+       end subroutine NEPMonitorCancel
+      subroutine NEPSetDSType(a,z)
+       import tNEP
+       NEP a ! NEP
+       PetscErrorCode z
+       end subroutine NEPSetDSType
+      subroutine NEPSetUp(a,z)
+       import tNEP
+       NEP a ! NEP
+       PetscErrorCode z
+       end subroutine NEPSetUp
+      subroutine NEPAllocateSolution(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPAllocateSolution
+      subroutine NEPCISSSetSizes(a,b,c,d,e,f,g,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscInt e ! PetscInt
+       PetscInt f ! PetscInt
+       PetscBool g ! PetscBool
+       PetscErrorCode z
+       end subroutine NEPCISSSetSizes
+      subroutine NEPCISSGetSizes(a,b,c,d,e,f,g,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscInt e ! PetscInt
+       PetscInt f ! PetscInt
+       PetscBool g ! PetscBool
+       PetscErrorCode z
+       end subroutine NEPCISSGetSizes
+      subroutine NEPCISSSetThreshold(a,b,c,z)
+       import tNEP
+       NEP a ! NEP
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine NEPCISSSetThreshold
+      subroutine NEPCISSGetThreshold(a,b,c,z)
+       import tNEP
+       NEP a ! NEP
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine NEPCISSGetThreshold
+      subroutine NEPCISSSetRefinement(a,b,c,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPCISSSetRefinement
+      subroutine NEPCISSGetRefinement(a,b,c,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPCISSGetRefinement
+      subroutine NEPCISSSetExtraction(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       NEPCISSExtraction b ! NEPCISSExtraction
+       PetscErrorCode z
+       end subroutine NEPCISSSetExtraction
+      subroutine NEPCISSGetExtraction(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       NEPCISSExtraction b ! NEPCISSExtraction
+       PetscErrorCode z
+       end subroutine NEPCISSGetExtraction
+      subroutine NEPNLEIGSSetRestart(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine NEPNLEIGSSetRestart
+      subroutine NEPNLEIGSGetRestart(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine NEPNLEIGSGetRestart
+      subroutine NEPNLEIGSSetLocking(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine NEPNLEIGSSetLocking
+      subroutine NEPNLEIGSGetLocking(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine NEPNLEIGSGetLocking
+      subroutine NEPNLEIGSSetInterpolation(a,b,c,z)
+       import tNEP
+       NEP a ! NEP
+       PetscReal b ! PetscReal
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPNLEIGSSetInterpolation
+      subroutine NEPNLEIGSGetInterpolation(a,b,c,z)
+       import tNEP
+       NEP a ! NEP
+       PetscReal b ! PetscReal
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine NEPNLEIGSGetInterpolation
+      subroutine NEPNLEIGSSetRKShifts(a,b,c,z)
+       import tNEP
+       NEP a ! NEP
+       PetscInt b ! PetscInt
+       PetscScalar c (*) ! PetscScalar
+       PetscErrorCode z
+       end subroutine NEPNLEIGSSetRKShifts
+      subroutine NEPNLEIGSSetFullBasis(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine NEPNLEIGSSetFullBasis
+      subroutine NEPNLEIGSGetFullBasis(a,b,z)
+       import tNEP
+       NEP a ! NEP
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine NEPNLEIGSGetFullBasis
+      subroutine NEPNLEIGSSetEPS(a,b,z)
+       import tEPS,tNEP
+       NEP a ! NEP
+       EPS b ! EPS
+       PetscErrorCode z
+       end subroutine NEPNLEIGSSetEPS
+      subroutine NEPNLEIGSGetEPS(a,b,z)
+       import tEPS,tNEP
+       NEP a ! NEP
+       EPS b ! EPS
+       PetscErrorCode z
+       end subroutine NEPNLEIGSGetEPS

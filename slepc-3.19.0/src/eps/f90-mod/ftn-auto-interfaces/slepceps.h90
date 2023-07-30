@@ -1,0 +1,963 @@
+      subroutine EPSLOBPCGSetBlockSize(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSLOBPCGSetBlockSize
+      subroutine EPSLOBPCGGetBlockSize(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSLOBPCGGetBlockSize
+      subroutine EPSLOBPCGSetRestart(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSLOBPCGSetRestart
+      subroutine EPSLOBPCGGetRestart(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSLOBPCGGetRestart
+      subroutine EPSLOBPCGSetLocking(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSLOBPCGSetLocking
+      subroutine EPSLOBPCGGetLocking(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSLOBPCGGetLocking
+      subroutine EPSEVSLSetSlices(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSEVSLSetSlices
+      subroutine EPSEVSLGetSlices(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSEVSLGetSlices
+      subroutine EPSEVSLSetRange(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSEVSLSetRange
+      subroutine EPSEVSLGetRange(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSEVSLGetRange
+      subroutine EPSEVSLSetDOSParameters(a,b,c,d,e,f,z)
+       import tEPS
+       EPS a ! EPS
+       EPSEVSLDOSMethod b ! EPSEVSLDOSMethod
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscInt e ! PetscInt
+       PetscInt f ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSEVSLSetDOSParameters
+      subroutine EPSEVSLGetDOSParameters(a,b,c,d,e,f,z)
+       import tEPS
+       EPS a ! EPS
+       EPSEVSLDOSMethod b ! EPSEVSLDOSMethod
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscInt e ! PetscInt
+       PetscInt f ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSEVSLGetDOSParameters
+      subroutine EPSEVSLSetPolParameters(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSEVSLSetPolParameters
+      subroutine EPSEVSLGetPolParameters(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSEVSLGetPolParameters
+      subroutine EPSEVSLSetDamping(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSEVSLDamping b ! EPSEVSLDamping
+       PetscErrorCode z
+       end subroutine EPSEVSLSetDamping
+      subroutine EPSEVSLGetDamping(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSEVSLDamping b ! EPSEVSLDamping
+       PetscErrorCode z
+       end subroutine EPSEVSLGetDamping
+      subroutine EPSCISSSetSizes(a,b,c,d,e,f,g,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscInt e ! PetscInt
+       PetscInt f ! PetscInt
+       PetscBool g ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSCISSSetSizes
+      subroutine EPSCISSGetSizes(a,b,c,d,e,f,g,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscInt e ! PetscInt
+       PetscInt f ! PetscInt
+       PetscBool g ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSCISSGetSizes
+      subroutine EPSCISSSetThreshold(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSCISSSetThreshold
+      subroutine EPSCISSGetThreshold(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSCISSGetThreshold
+      subroutine EPSCISSSetRefinement(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSCISSSetRefinement
+      subroutine EPSCISSGetRefinement(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSCISSGetRefinement
+      subroutine EPSCISSSetUseST(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSCISSSetUseST
+      subroutine EPSCISSGetUseST(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSCISSGetUseST
+      subroutine EPSCISSSetQuadRule(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSCISSQuadRule b ! EPSCISSQuadRule
+       PetscErrorCode z
+       end subroutine EPSCISSSetQuadRule
+      subroutine EPSCISSGetQuadRule(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSCISSQuadRule b ! EPSCISSQuadRule
+       PetscErrorCode z
+       end subroutine EPSCISSGetQuadRule
+      subroutine EPSCISSSetExtraction(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSCISSExtraction b ! EPSCISSExtraction
+       PetscErrorCode z
+       end subroutine EPSCISSSetExtraction
+      subroutine EPSCISSGetExtraction(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSCISSExtraction b ! EPSCISSExtraction
+       PetscErrorCode z
+       end subroutine EPSCISSGetExtraction
+      subroutine EPSPRIMMESetBlockSize(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSPRIMMESetBlockSize
+      subroutine EPSPRIMMEGetBlockSize(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSPRIMMEGetBlockSize
+      subroutine EPSPRIMMESetMethod(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSPRIMMEMethod b ! EPSPRIMMEMethod
+       PetscErrorCode z
+       end subroutine EPSPRIMMESetMethod
+      subroutine EPSPRIMMEGetMethod(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSPRIMMEMethod b ! EPSPRIMMEMethod
+       PetscErrorCode z
+       end subroutine EPSPRIMMEGetMethod
+      subroutine EPSRQCGSetReset(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSRQCGSetReset
+      subroutine EPSRQCGGetReset(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSRQCGGetReset
+      subroutine EPSSetWorkVecs(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSSetWorkVecs
+      subroutine EPSMonitorCancel(a,z)
+       import tEPS
+       EPS a ! EPS
+       PetscErrorCode z
+       end subroutine EPSMonitorCancel
+      subroutine EPSSolve(a,z)
+       import tEPS
+       EPS a ! EPS
+       PetscErrorCode z
+       end subroutine EPSSolve
+      subroutine EPSGetIterationNumber(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSGetIterationNumber
+      subroutine EPSGetConverged(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSGetConverged
+      subroutine EPSGetConvergedReason(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSConvergedReason b ! EPSConvergedReason
+       PetscErrorCode z
+       end subroutine EPSGetConvergedReason
+      subroutine EPSGetInvariantSubspace(a,b,z)
+       import tEPS,tVec
+       EPS a ! EPS
+       Vec b (*) ! Vec
+       PetscErrorCode z
+       end subroutine EPSGetInvariantSubspace
+      subroutine EPSGetEigenvector(a,b,c,d,z)
+       import tEPS,tVec
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       Vec c ! Vec
+       Vec d ! Vec
+       PetscErrorCode z
+       end subroutine EPSGetEigenvector
+      subroutine EPSGetLeftEigenvector(a,b,c,d,z)
+       import tEPS,tVec
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       Vec c ! Vec
+       Vec d ! Vec
+       PetscErrorCode z
+       end subroutine EPSGetLeftEigenvector
+      subroutine EPSGetErrorEstimate(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSGetErrorEstimate
+      subroutine EPSComputeError(a,b,c,d,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       EPSErrorType c ! EPSErrorType
+       PetscReal d ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSComputeError
+      subroutine EPSSetDSType(a,z)
+       import tEPS
+       EPS a ! EPS
+       PetscErrorCode z
+       end subroutine EPSSetDSType
+      subroutine EPSSetUp(a,z)
+       import tEPS
+       EPS a ! EPS
+       PetscErrorCode z
+       end subroutine EPSSetUp
+      subroutine EPSSetOperators(a,b,c,z)
+       import tMat,tEPS
+       EPS a ! EPS
+       Mat b ! Mat
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine EPSSetOperators
+      subroutine EPSGetOperators(a,b,c,z)
+       import tMat,tEPS
+       EPS a ! EPS
+       Mat b ! Mat
+       Mat c ! Mat
+       PetscErrorCode z
+       end subroutine EPSGetOperators
+      subroutine EPSAllocateSolution(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSAllocateSolution
+      subroutine EPSSetFromOptions(a,z)
+       import tEPS
+       EPS a ! EPS
+       PetscErrorCode z
+       end subroutine EPSSetFromOptions
+      subroutine EPSSetTolerances(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscReal b ! PetscReal
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSSetTolerances
+      subroutine EPSSetDimensions(a,b,c,d,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSSetDimensions
+      subroutine EPSSetWhichEigenpairs(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSWhich b ! EPSWhich
+       PetscErrorCode z
+       end subroutine EPSSetWhichEigenpairs
+      subroutine EPSGetWhichEigenpairs(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSWhich b ! EPSWhich
+       PetscErrorCode z
+       end subroutine EPSGetWhichEigenpairs
+      subroutine EPSSetConvergenceTest(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSConv b ! EPSConv
+       PetscErrorCode z
+       end subroutine EPSSetConvergenceTest
+      subroutine EPSGetConvergenceTest(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSConv b ! EPSConv
+       PetscErrorCode z
+       end subroutine EPSGetConvergenceTest
+      subroutine EPSSetStoppingTest(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSStop b ! EPSStop
+       PetscErrorCode z
+       end subroutine EPSSetStoppingTest
+      subroutine EPSGetStoppingTest(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSStop b ! EPSStop
+       PetscErrorCode z
+       end subroutine EPSGetStoppingTest
+      subroutine EPSSetProblemType(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSProblemType b ! EPSProblemType
+       PetscErrorCode z
+       end subroutine EPSSetProblemType
+      subroutine EPSGetProblemType(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSProblemType b ! EPSProblemType
+       PetscErrorCode z
+       end subroutine EPSGetProblemType
+      subroutine EPSSetExtraction(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSExtraction b ! EPSExtraction
+       PetscErrorCode z
+       end subroutine EPSSetExtraction
+      subroutine EPSGetExtraction(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSExtraction b ! EPSExtraction
+       PetscErrorCode z
+       end subroutine EPSGetExtraction
+      subroutine EPSSetBalance(a,b,c,d,z)
+       import tEPS
+       EPS a ! EPS
+       EPSBalance b ! EPSBalance
+       PetscInt c ! PetscInt
+       PetscReal d ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSSetBalance
+      subroutine EPSSetTwoSided(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSSetTwoSided
+      subroutine EPSGetTwoSided(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSGetTwoSided
+      subroutine EPSSetTrueResidual(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSSetTrueResidual
+      subroutine EPSGetTrueResidual(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSGetTrueResidual
+      subroutine EPSSetTrackAll(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSSetTrackAll
+      subroutine EPSGetTrackAll(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSGetTrackAll
+      subroutine EPSSetPurify(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSSetPurify
+      subroutine EPSGetPurify(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSGetPurify
+      subroutine EPSConvergedReasonViewFromOptions(a,z)
+       import tEPS
+       EPS a ! EPS
+       PetscErrorCode z
+       end subroutine EPSConvergedReasonViewFromOptions
+      subroutine EPSErrorViewFromOptions(a,z)
+       import tEPS
+       EPS a ! EPS
+       PetscErrorCode z
+       end subroutine EPSErrorViewFromOptions
+      subroutine EPSValuesViewFromOptions(a,z)
+       import tEPS
+       EPS a ! EPS
+       PetscErrorCode z
+       end subroutine EPSValuesViewFromOptions
+      subroutine EPSVectorsViewFromOptions(a,z)
+       import tEPS
+       EPS a ! EPS
+       PetscErrorCode z
+       end subroutine EPSVectorsViewFromOptions
+      subroutine EPSCreate(a,b,z)
+       import tEPS
+       MPI_Comm a ! MPI_Comm
+       EPS b ! EPS
+       PetscErrorCode z
+       end subroutine EPSCreate
+      subroutine EPSReset(a,z)
+       import tEPS
+       EPS a ! EPS
+       PetscErrorCode z
+       end subroutine EPSReset
+      subroutine EPSSetTarget(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine EPSSetTarget
+      subroutine EPSGetTarget(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscScalar b ! PetscScalar
+       PetscErrorCode z
+       end subroutine EPSGetTarget
+      subroutine EPSSetInterval(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSSetInterval
+      subroutine EPSGetInterval(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscReal b ! PetscReal
+       PetscReal c ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSGetInterval
+      subroutine EPSSetST(a,b,z)
+       import tEPS,tST
+       EPS a ! EPS
+       ST b ! ST
+       PetscErrorCode z
+       end subroutine EPSSetST
+      subroutine EPSGetST(a,b,z)
+       import tEPS,tST
+       EPS a ! EPS
+       ST b ! ST
+       PetscErrorCode z
+       end subroutine EPSGetST
+      subroutine EPSSetBV(a,b,z)
+       import tEPS,tBV
+       EPS a ! EPS
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine EPSSetBV
+      subroutine EPSGetBV(a,b,z)
+       import tEPS,tBV
+       EPS a ! EPS
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine EPSGetBV
+      subroutine EPSSetRG(a,b,z)
+       import tEPS,tRG
+       EPS a ! EPS
+       RG b ! RG
+       PetscErrorCode z
+       end subroutine EPSSetRG
+      subroutine EPSGetRG(a,b,z)
+       import tEPS,tRG
+       EPS a ! EPS
+       RG b ! RG
+       PetscErrorCode z
+       end subroutine EPSGetRG
+      subroutine EPSSetDS(a,b,z)
+       import tDS,tEPS
+       EPS a ! EPS
+       DS b ! DS
+       PetscErrorCode z
+       end subroutine EPSSetDS
+      subroutine EPSGetDS(a,b,z)
+       import tDS,tEPS
+       EPS a ! EPS
+       DS b ! DS
+       PetscErrorCode z
+       end subroutine EPSGetDS
+      subroutine EPSIsGeneralized(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSIsGeneralized
+      subroutine EPSIsHermitian(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSIsHermitian
+      subroutine EPSIsPositive(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSIsPositive
+      subroutine EPSBLOPEXSetBlockSize(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSBLOPEXSetBlockSize
+      subroutine EPSBLOPEXGetBlockSize(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSBLOPEXGetBlockSize
+      subroutine EPSLyapIISetRanks(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSLyapIISetRanks
+      subroutine EPSLyapIIGetRanks(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSLyapIIGetRanks
+      subroutine EPSLyapIISetLME(a,b,z)
+       import tEPS,tLME
+       EPS a ! EPS
+       LME b ! LME
+       PetscErrorCode z
+       end subroutine EPSLyapIISetLME
+      subroutine EPSLyapIIGetLME(a,b,z)
+       import tEPS,tLME
+       EPS a ! EPS
+       LME b ! LME
+       PetscErrorCode z
+       end subroutine EPSLyapIIGetLME
+      subroutine EPSKrylovSchurSetRestart(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSKrylovSchurSetRestart
+      subroutine EPSKrylovSchurGetRestart(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSKrylovSchurGetRestart
+      subroutine EPSKrylovSchurSetLocking(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSKrylovSchurSetLocking
+      subroutine EPSKrylovSchurGetLocking(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSKrylovSchurGetLocking
+      subroutine EPSKrylovSchurSetPartitions(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSKrylovSchurSetPartitions
+      subroutine EPSKrylovSchurGetPartitions(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSKrylovSchurGetPartitions
+      subroutine EPSKrylovSchurSetDetectZeros(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSKrylovSchurSetDetectZeros
+      subroutine EPSKrylovSchurGetDetectZeros(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSKrylovSchurGetDetectZeros
+      subroutine EPSKrylovSchurSetDimensions(a,b,c,d,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSKrylovSchurSetDimensions
+      subroutine EPSKrylovSchurGetDimensions(a,b,c,d,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscInt d ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSKrylovSchurGetDimensions
+      subroutine EPSKrylovSchurGetSubcommPairs(a,b,c,d,z)
+       import tEPS,tVec
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscScalar c ! PetscScalar
+       Vec d ! Vec
+       PetscErrorCode z
+       end subroutine EPSKrylovSchurGetSubcommPairs
+      subroutine EPSKrylovSchurUpdateSubcommMats(a,b,c,d,e,f,g,h,i,z)
+       import tMat,tEPS
+       EPS a ! EPS
+       PetscScalar b ! PetscScalar
+       PetscScalar c ! PetscScalar
+       Mat d ! Mat
+       PetscScalar e ! PetscScalar
+       PetscScalar f ! PetscScalar
+       Mat g ! Mat
+       MatStructure h ! MatStructure
+       PetscBool i ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSKrylovSchurUpdateSubcommMats
+      subroutine EPSKrylovSchurGetKSP(a,b,z)
+       import tEPS,tKSP
+       EPS a ! EPS
+       KSP b ! KSP
+       PetscErrorCode z
+       end subroutine EPSKrylovSchurGetKSP
+      subroutine EPSJDSetKrylovStart(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSJDSetKrylovStart
+      subroutine EPSJDGetKrylovStart(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSJDGetKrylovStart
+      subroutine EPSJDSetBlockSize(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSJDSetBlockSize
+      subroutine EPSJDGetBlockSize(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSJDGetBlockSize
+      subroutine EPSJDSetRestart(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSJDSetRestart
+      subroutine EPSJDGetRestart(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSJDGetRestart
+      subroutine EPSJDSetInitialSize(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSJDSetInitialSize
+      subroutine EPSJDGetInitialSize(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSJDGetInitialSize
+      subroutine EPSJDSetFix(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSJDSetFix
+      subroutine EPSJDGetFix(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine EPSJDGetFix
+      subroutine EPSJDSetConstCorrectionTol(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSJDSetConstCorrectionTol
+      subroutine EPSJDGetConstCorrectionTol(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSJDGetConstCorrectionTol
+      subroutine EPSJDSetBOrth(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSJDSetBOrth
+      subroutine EPSJDGetBOrth(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSJDGetBOrth
+      subroutine EPSFEASTSetNumPoints(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSFEASTSetNumPoints
+      subroutine EPSFEASTGetNumPoints(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSFEASTGetNumPoints
+      subroutine EPSArnoldiSetDelayed(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSArnoldiSetDelayed
+      subroutine EPSArnoldiGetDelayed(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSArnoldiGetDelayed
+      subroutine EPSGDSetKrylovStart(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSGDSetKrylovStart
+      subroutine EPSGDGetKrylovStart(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSGDGetKrylovStart
+      subroutine EPSGDSetBlockSize(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSGDSetBlockSize
+      subroutine EPSGDGetBlockSize(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSGDGetBlockSize
+      subroutine EPSGDSetRestart(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSGDSetRestart
+      subroutine EPSGDGetRestart(a,b,c,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSGDGetRestart
+      subroutine EPSGDSetInitialSize(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSGDSetInitialSize
+      subroutine EPSGDGetInitialSize(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine EPSGDGetInitialSize
+      subroutine EPSGDSetBOrth(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSGDSetBOrth
+      subroutine EPSGDGetBOrth(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSGDGetBOrth
+      subroutine EPSGDSetDoubleExpansion(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSGDSetDoubleExpansion
+      subroutine EPSGDGetDoubleExpansion(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSGDGetDoubleExpansion
+      subroutine EPSLanczosSetReorthog(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSLanczosReorthogType b ! EPSLanczosReorthogType
+       PetscErrorCode z
+       end subroutine EPSLanczosSetReorthog
+      subroutine EPSLanczosGetReorthog(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSLanczosReorthogType b ! EPSLanczosReorthogType
+       PetscErrorCode z
+       end subroutine EPSLanczosGetReorthog
+      subroutine EPSPowerSetShiftType(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSPowerShiftType b ! EPSPowerShiftType
+       PetscErrorCode z
+       end subroutine EPSPowerSetShiftType
+      subroutine EPSPowerGetShiftType(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       EPSPowerShiftType b ! EPSPowerShiftType
+       PetscErrorCode z
+       end subroutine EPSPowerGetShiftType
+      subroutine EPSPowerSetNonlinear(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSPowerSetNonlinear
+      subroutine EPSPowerGetNonlinear(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSPowerGetNonlinear
+      subroutine EPSPowerSetUpdate(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSPowerSetUpdate
+      subroutine EPSPowerGetUpdate(a,b,z)
+       import tEPS
+       EPS a ! EPS
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine EPSPowerGetUpdate
+      subroutine EPSPowerSetSNES(a,b,z)
+       import tEPS,tSNES
+       EPS a ! EPS
+       SNES b ! SNES
+       PetscErrorCode z
+       end subroutine EPSPowerSetSNES
+      subroutine EPSPowerGetSNES(a,b,z)
+       import tEPS,tSNES
+       EPS a ! EPS
+       SNES b ! SNES
+       PetscErrorCode z
+       end subroutine EPSPowerGetSNES

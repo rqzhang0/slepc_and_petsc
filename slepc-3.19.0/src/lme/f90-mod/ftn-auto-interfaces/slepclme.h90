@@ -1,0 +1,163 @@
+      subroutine LMEMonitorCancel(a,z)
+       import tLME
+       LME a ! LME
+       PetscErrorCode z
+       end subroutine LMEMonitorCancel
+      subroutine LMEConvergedReasonViewFromOptions(a,z)
+       import tLME
+       LME a ! LME
+       PetscErrorCode z
+       end subroutine LMEConvergedReasonViewFromOptions
+      subroutine LMECreate(a,b,z)
+       import tLME
+       MPI_Comm a ! MPI_Comm
+       LME b ! LME
+       PetscErrorCode z
+       end subroutine LMECreate
+      subroutine LMEReset(a,z)
+       import tLME
+       LME a ! LME
+       PetscErrorCode z
+       end subroutine LMEReset
+      subroutine LMESetBV(a,b,z)
+       import tLME,tBV
+       LME a ! LME
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine LMESetBV
+      subroutine LMEGetBV(a,b,z)
+       import tLME,tBV
+       LME a ! LME
+       BV b ! BV
+       PetscErrorCode z
+       end subroutine LMEGetBV
+      subroutine LMESetUp(a,z)
+       import tLME
+       LME a ! LME
+       PetscErrorCode z
+       end subroutine LMESetUp
+      subroutine LMESetCoefficients(a,b,c,d,e,z)
+       import tMat,tLME
+       LME a ! LME
+       Mat b ! Mat
+       Mat c ! Mat
+       Mat d ! Mat
+       Mat e ! Mat
+       PetscErrorCode z
+       end subroutine LMESetCoefficients
+      subroutine LMEGetCoefficients(a,b,c,d,e,z)
+       import tMat,tLME
+       LME a ! LME
+       Mat b ! Mat
+       Mat c ! Mat
+       Mat d ! Mat
+       Mat e ! Mat
+       PetscErrorCode z
+       end subroutine LMEGetCoefficients
+      subroutine LMESetRHS(a,b,z)
+       import tMat,tLME
+       LME a ! LME
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine LMESetRHS
+      subroutine LMEGetRHS(a,b,z)
+       import tMat,tLME
+       LME a ! LME
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine LMEGetRHS
+      subroutine LMESetSolution(a,b,z)
+       import tMat,tLME
+       LME a ! LME
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine LMESetSolution
+      subroutine LMEGetSolution(a,b,z)
+       import tMat,tLME
+       LME a ! LME
+       Mat b ! Mat
+       PetscErrorCode z
+       end subroutine LMEGetSolution
+      subroutine LMEAllocateSolution(a,b,z)
+       import tLME
+       LME a ! LME
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine LMEAllocateSolution
+      subroutine LMESetFromOptions(a,z)
+       import tLME
+       LME a ! LME
+       PetscErrorCode z
+       end subroutine LMESetFromOptions
+      subroutine LMESetProblemType(a,b,z)
+       import tLME
+       LME a ! LME
+       LMEProblemType b ! LMEProblemType
+       PetscErrorCode z
+       end subroutine LMESetProblemType
+      subroutine LMEGetProblemType(a,b,z)
+       import tLME
+       LME a ! LME
+       LMEProblemType b ! LMEProblemType
+       PetscErrorCode z
+       end subroutine LMEGetProblemType
+      subroutine LMESetTolerances(a,b,c,z)
+       import tLME
+       LME a ! LME
+       PetscReal b ! PetscReal
+       PetscInt c ! PetscInt
+       PetscErrorCode z
+       end subroutine LMESetTolerances
+      subroutine LMEGetDimensions(a,b,z)
+       import tLME
+       LME a ! LME
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine LMEGetDimensions
+      subroutine LMESetDimensions(a,b,z)
+       import tLME
+       LME a ! LME
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine LMESetDimensions
+      subroutine LMESetErrorIfNotConverged(a,b,z)
+       import tLME
+       LME a ! LME
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine LMESetErrorIfNotConverged
+      subroutine LMEGetErrorIfNotConverged(a,b,z)
+       import tLME
+       LME a ! LME
+       PetscBool b ! PetscBool
+       PetscErrorCode z
+       end subroutine LMEGetErrorIfNotConverged
+      subroutine LMESolve(a,z)
+       import tLME
+       LME a ! LME
+       PetscErrorCode z
+       end subroutine LMESolve
+      subroutine LMEGetIterationNumber(a,b,z)
+       import tLME
+       LME a ! LME
+       PetscInt b ! PetscInt
+       PetscErrorCode z
+       end subroutine LMEGetIterationNumber
+      subroutine LMEGetConvergedReason(a,b,z)
+       import tLME
+       LME a ! LME
+       LMEConvergedReason b ! LMEConvergedReason
+       PetscErrorCode z
+       end subroutine LMEGetConvergedReason
+      subroutine LMEGetErrorEstimate(a,b,z)
+       import tLME
+       LME a ! LME
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine LMEGetErrorEstimate
+      subroutine LMEComputeError(a,b,z)
+       import tLME
+       LME a ! LME
+       PetscReal b ! PetscReal
+       PetscErrorCode z
+       end subroutine LMEComputeError
