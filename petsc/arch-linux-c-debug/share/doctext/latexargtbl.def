@@ -1,0 +1,10 @@
+# Here's an alternative to the argument formatting that uses a table
+# You can get this by specifying -defn latexargtbl.def to doctext.
+s_arg_list    %n\begin{tabular}[lp{4in}]
+s_arg_inlist  %n\startarg{
+e_arg_inlist  }&
+s_defn_inlist {
+# The br is used to break the line in the event that the browser doesn't
+# support tables.  It is better than nothing.
+e_defn_inlist }\\
+e_arg_list    \end{tabular}

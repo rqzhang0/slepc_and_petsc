@@ -1,0 +1,237 @@
+#
+# This file contains the basic definitions for tohtml
+# It is usable by tortf except for some HTML formatting operations.
+# The format is
+# command name nargs value
+# command-nargs-value may be one of
+#    nop  any nargs   - Ignore command with nargs arguments
+#    name any string  - Replace name with string
+#    dimen any any    - Name is a dimension
+#    asis  any nargs  - Remove command and leave arguments
+#    hdef any nargs string - 
+#                       Replace name with string.  Use single quotes to
+#                       surround formatting commands (literals).  Double
+#                       the single quotes to get a single quote
+#    begin-env any 0 string -
+#                       Use string as the commands to start the named 
+#                       environment.  It may contain hdef-style formatting
+#                       commands
+#    end-env any 0 string -
+#                       Like begin-env, but a the end of the named environment
+# We'll eventually add others
+#asis  paragraph 1 
+#
+dimen hskip 
+dimen hsize
+dimen vskip
+dimen hfuzz
+dimen hoffset
+dimen voffset
+dimen parskip
+dimen marginparwidth
+dimen marginparsep
+dimen oddsidemargin
+dimen evensidemargin
+dimen topmargin
+dimen textwidth
+dimen textheight
+dimen parindent
+dimen hangindent
+dimen leftmargin
+dimen leftskip
+dimen rightskip
+dimen labelwidth
+dimen labelsep
+dimen itemindent
+dimen itemsep
+dimen topsep
+dimen baselineskip
+#
+# \- is usually a discretionary hyphen 
+nop - 0
+nop tie 0
+nop twocolumn 0
+nop onecolumn 0
+nop addcontentsline 3
+# Redefining @startsection changes the apperance of sections; we make this
+#  into a no-op.  This isn't quite correct, since the name being
+#  redefined is probably a section, and we should get the level from the
+#  second argument and the name from the first. 
+nop @startsection 6
+nop setfilename 1
+nop pagenumbering 1
+nop protect 0
+nop samepage 0
+nop hyphenation 1
+nop relax 0
+nop long 0
+nop outer 0
+nop clearpage 0
+nop noindent 0
+nop indent 0
+nop pagestyle 1
+nop nobreak 0
+nop break 0 
+nop bibliographystyle 1
+nop tableofcontents 0
+nop setcounter 2
+nop value 1
+nop smallskip 0
+nop medskip 0
+nop bigskip 0
+nop raggedright 0
+nop raggedbottom 0
+nop / 0
+nop null 0
+nop small 0
+nop tiny 0
+nop huge 0
+nop Huge 0
+nop large 0
+nop Large 0
+nop arabic 0
+nop closer 0
+nop centering 0
+nop sloppy 0
+nop marginpar 1
+#TXInsertName( TeXlist, "vspace", TXnopStar, 1, (void *)0 );
+#TXInsertName( TeXlist, "hspace", TXnopStar, 1, (void *)0 );
+nop hfil 0
+nop hfill 0
+nop hss 0
+nop vfil 0
+nop vfill 0
+nop vss 0
+nop eject 0
+nop newpage 0
+nop hline 0
+nop newblock 0
+nop thispagestyle 1
+nop thanks 1
+nop typeout 1
+#
+nop nocite 1
+#
+asis underline 1
+asis fbox 1 
+#
+# \% is usually %.  We can't use name for this, because % is ALSO
+# the default comment symbol, and requires special processing
+#name % 0 %
+name and 0 and
+name LaTeX 0 LaTeX
+name copyright 0 (c)
+name leftarrow 0 <-
+name mu 0 u
+# This definition of blank doesn't work yet...
+#name " " 0 " "
+name _ 0 _
+name # 0 #
+name $ 0 $
+name ldots 0 ...
+name cdots 0 ...
+name cdot 0 .
+#name times 0 " x " 
+#
+nop ve 0
+#
+#hdef centerline 1 '<CENTER>'#1'</CENTER>'
+hdef centerline 1 '<div style="text-align:center">'#1'</div>'
+# Some LaTeX uses \center where they mean to use \centerline.
+# This is commented out but can be used in a document-specific 
+# definitions file
+# hdef center 1 '<CENTER>'#1'</CENTER>'
+hdef htmlanchor 2 '<span id="'#1'">#2</span>'
+#hdef htmlanchor 2 '<A NAME="'#1'">#2</A>'
+hdef texorpdfstring 2 #1
+# LaTeX2e versions of font changes
+# These don't use the HTML font change commands because LaTeX and HTML font
+# selection rules are different (HTML's don't nest)
+hdef texttt 1 {\tt #1}
+hdef emph 1 {\em #1}
+hdef textbf 1 {\bf #1}
+hdef textsf 1 {\sf #1}
+hdef textrm 1 {\rm #1}
+# This version of hrule is only approximate
+hdef hrule 0 '<HR>'
+#
+# This uses Javascript to pop up an alert box on a footnote indicated with
+# an asterisk
+hdef footnote 1 '<A HREF="JavaScript: alert(''#1'')">*</A>'
+#
+# Environments
+#begin-env center 0 '<center>'
+#end-env   center 0 '</center>'
+begin-env center 0 '<div style="text-align:center">'
+end-env   center 0 '</div>'
+begin-env quote  0 '<blockquote>'
+end-env   quote  0 '</blockquote>'
+begin-env quotation  0 '<blockquote>'
+end-env   quotation  0 '</blockquote>'
+begin-env normalsize 0 
+end-env   normalsize 0 
+begin-env centering 0 '<div style="text-align:center">'
+end-env   centering 0 '</div>'
+#begin-env centering 0 '<center>'
+#end-env   centering 0 '</center>'
+begin-env abstract 0 '<blockquote>'
+end-env   abstract 0 '</blockquote>'
+begin-env raggedright 0 
+end-env   raggedright 0
+begin-env flushleft 0
+end-env   flushleft 0
+begin-env sloppypar 0
+end-env   sloppypar 0
+begin-env tiny 0
+end-env   tiny 0
+#
+# If's (not yet supported)
+#if ifvmode
+#if ifmmode
+# TeX's predefined math characters (this is a subset)
+hdef alpha 0 '&alpha;'
+hdef Alpha 0 '&Alpha;'
+hdef beta 0 '&beta;'
+hdef Beta 0 '&Beta;'
+hdef gamma 0 '&gamma;'
+hdef Gamma 0 '&Gamma;'
+hdef delta 0 '&delta;'
+hdef Delta 0 '&Delta;'
+hdef epsilon 0 '&epsilon;'
+hdef Epsilon 0 '&Epsilon;'
+hdef zeta 0 '&zeta;'
+hdef Zeta 0 '&Zeta;'
+hdef eta 0 '&eta;'
+hdef Eta 0 '&Eta;'
+hdef theta 0 '&theta;'
+hdef Theta 0 '&Theta;'
+hdef iota 0 '&iota;'
+hdef Iota 0 '&Iota;'
+hdef kappa 0 '&kappa;'
+hdef Kappa 0 '&Kappa;'
+hdef lambda 0 '&lambda;'
+hdef Lambda 0 '&Lambda;'
+hdef mu 0 '&mu;'
+hdef Mu 0 '&Mu;'
+hdef xi 0 '&xi;'
+hdef Xi 0 '&Xi;'
+hdef omicron 0 '&omicron;'
+hdef Omicron 0 '&Omicron;'
+hdef pi 0 '&pi;'
+hdef Pi 0 '&Pi;'
+hdef rho 0 '&rho;'
+hdef Rho 0 '&Rho;'
+hdef sigma 0 '&sigma;'
+hdef Sigma 0 '&Sigma;'
+hdef tau 0 '&tau;'
+hdef Tau 0 '&Tau;'
+hdef upsilon 0 '&upsilon;'
+hdef Upsilon 0 '&Upsilon;'
+hdef phi 0 '&phi;'
+hdef Phi 0 '&Phi;'
+hdef chi 0 '&chi;'
+hdef Chi 0 '&Chi;'
+hdef psi 0 '&psi;'
+hdef Psi 0 '&Psi;'
+hdef omega 0 '&omega;'
+hdef Omega 0 '&Omega;'

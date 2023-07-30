@@ -1,0 +1,35 @@
+#!/bin/bash
+set -x
+
+export LANG=en_US
+export LC=C
+export LC_ALL=C
+
+PETSC_DIR=/home/balay/git-repo/petsc-release.clone
+
+#create the tarfile
+maintdir=`dirname $0`
+${maintdir}/builddist ${PETSC_DIR} release
+
+#determine tarball version
+version_major=`grep '^#define PETSC_VERSION_MAJOR ' ${PETSC_DIR}/include/petscversion.h |tr -s ' ' | cut -d ' ' -f 3`
+version_minor=`grep '^#define PETSC_VERSION_MINOR ' ${PETSC_DIR}/include/petscversion.h |tr -s ' ' | cut -d ' ' -f 3`
+version_subminor=`grep '^#define PETSC_VERSION_SUBMINOR ' ${PETSC_DIR}/include/petscversion.h |tr -s ' ' | cut -d ' ' -f 3`
+
+RELEASE=${version_major}.${version_minor}
+VERSION=${version_major}.${version_minor}.${version_subminor}
+
+#Now copy the generated tarfiles over to the website
+scp ~/petsc-${VERSION}.tar.gz petsc@login.mcs.anl.gov:/mcs/ftp/pub/petsc/release-snapshots/
+scp ~/petsc4py-${VERSION}.tar.gz petsc@login.mcs.anl.gov:/mcs/ftp/pub/petsc/release-snapshots/
+scp ~/petsc-with-docs-${VERSION}.tar.gz petsc@login.mcs.anl.gov:/mcs/ftp/pub/petsc/release-snapshots/
+ssh petsc@login.mcs.anl.gov "cd /mcs/ftp/pub/petsc/release-snapshots; ln -s petsc-${VERSION}.tar.gz petsc-lite-${VERSION}.tar.gz"
+
+# petsc.tar.gz/petsc-lite.tar.gz links are done manually
+ssh petsc@login.mcs.anl.gov " \
+  cd /mcs/ftp/pub/petsc/release-snapshots; \
+  /bin/rm -f petsc-${RELEASE}.tar.gz petsc-lite-${RELEASE}.tar.gz petsc-with-docs-${RELEASE}.tar.gz petsc4py-${RELEASE}.tar.gz ; \
+  /bin/ln -s petsc-${VERSION}.tar.gz petsc-${RELEASE}.tar.gz; \
+  /bin/ln -s petsc4py-${VERSION}.tar.gz petsc4py-${RELEASE}.tar.gz; \
+  /bin/ln -s petsc-with-docs-${VERSION}.tar.gz petsc-with-docs-${RELEASE}.tar.gz; \
+  /bin/ln -s petsc-lite-${VERSION}.tar.gz petsc-lite-${RELEASE}.tar.gz"

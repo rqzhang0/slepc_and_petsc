@@ -1,0 +1,6 @@
+# Semi-Lagrangian Solves using the Method of Characteristics
+
+`Characteristic` objects are used to manage parallel Semi-Lagrangian methods (method of characteristics) for structured mesh (`DMDA`) problems
+in PDE-based simulations.
+
+

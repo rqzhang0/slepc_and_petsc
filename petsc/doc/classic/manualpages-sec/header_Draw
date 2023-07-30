@@ -1,0 +1,3 @@
+# Graphics (Draw)
+
+The `PetscDraw` classes are used to produce simple graphics, with, for example X Windows.

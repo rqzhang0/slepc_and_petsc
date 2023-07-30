@@ -1,0 +1,61 @@
+#
+# This is a sample definition file for HTML output
+# 
+preamble         \begin{document}%n
+postamble        \end{document}%n
+heading-1        %n\section{%1}%n
+heading-2        %n\subsection{%1}%n
+heading-3        %n\subsubsection{%1}%n
+heading          %n\subsubsubsection{%1}%n
+#
+# This form of title lets you jump to the title.
+title            %n\title{%1}\maketitle
+end_par          %n\par%n
+linebreak        \linebreak 
+line_break       \linebreak 
+blank            \ 
+tt               %f{\tt %e="}"
+rm               %f
+it               %f{\em %e="}"
+em               %f{\em %e="}"
+ss               %f{\ss %e="}"
+brm              %f{\bf %e="}"
+#
+# You can use <A HREF="%s1">Push here for picture</A> to make the images
+# external to the document
+image            
+link             
+s_enum           \begin{enumerate}
+e_enum           \end{enumerate}
+s_itemize        \begin{itemize}
+e_itemize        \end{itemize}
+s_description    \begin{description}
+e_description    \end{description}
+s_verbatim       \begin{verbatim}%n
+e_verbatim       %n\end{verbatim}%n
+item_enum        \item
+item_itemize     \item
+item_description \item[%1]
+#
+# This is the NetScape form; it makes more sense than the attribute
+# form (add to each <P> a CENTER attribute).
+s_center \begin{center}
+e_center \end{center}
+#
+# This is a first cut at supporting NetScape tables.
+# Still need something for table headings
+b_table %n\begin{tabular}%n
+e_table %n\end{tabular}%n
+b_row   
+e_row   \\%n
+b_col   
+e_col   
+sep_col &
+#
+# Additional environments
+s_enumerate \begin{enumerate}
+e_enumerate \end{enumerate}
+itemize_enum \item{}
+#
+s_blockquote \begin{quotation}
+e_blockquote \end{quotation}

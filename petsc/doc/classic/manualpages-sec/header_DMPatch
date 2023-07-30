@@ -1,0 +1,3 @@
+# Sequences of parallel mesh patches (DMPATCH)
+
+The `DMPATCH` subclass of `DM` is intended to handle adaptive refinement calculated in serial using patches that fill the local machine. It is currently not working.

@@ -1,0 +1,68 @@
+#
+# This is a sample definition file for nroff output
+# This is a rough guess; I need to look up the nroff codes
+# \&. should be used for a . at the beginning of a line
+# Using \c will suppress a space at the end of a line when introducing
+# or ending a formatting command.  For example
+# foo \c
+# .I bar\c
+# \&.
+# 
+preamble         
+postamble        
+heading          %n.SH %u1%n
+section          %n.SH %u1%n
+#
+# Title isn't quite right yet
+# .TH name level "date" " " "heading"
+title            %n.TH %1 ""%n.SH NAME%n%1 
+end_par          %n%n
+linebreak        %n.br%n
+line_break       %n.br%n
+blank            \ 
+tt               %n.I 
+rm               %n
+it               %n.I 
+ss               %n
+brm              %n.B
+#
+image            
+link             
+s_enum           
+e_enum           
+s_itemize        
+e_itemize        
+s_description    %n.PD 0%n.TP%n.B 
+e_description    %n.PD 1%n
+s_verbatim       %n.nf%n
+e_verbatim       %n.fi%n
+item_enum        
+item_itemize     
+item_description %n
+#
+#s_arg            %n.PD 0%n.TP%n.B     
+#s_defn           %n-
+#e_defn           %n.PD 1%n
+#e_arg            %n
+#
+# This will center upto 250 lines.
+s_center %n.ce 250
+e_center %n.ce 0
+#
+# This is a first cut at supporting NetScape tables.
+# Still need something for table headings
+b_table 
+e_table 
+b_row   
+e_row   
+b_col   
+e_col   
+#
+# Additional environments
+s_enumerate %n.nr e 1 1%n
+
+e_enumerate %n.rr e
+itemize_enum %n\\ne
+#
+s_blockquote %n.in 1cm%n
+e_blockquote %n.in%n

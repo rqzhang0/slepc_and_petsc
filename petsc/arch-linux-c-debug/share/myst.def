@@ -1,0 +1,56 @@
+#
+# This is a sample definition file for MyST (Markdown) output
+#
+
+# There are some HTML tags below. These should work with Markdown, but it would
+# be cleaner to use MyST-native syntax where possible.
+
+preamble
+postamble
+heading          %n## %1%n
+section          %n### %1%n
+
+title            %n# %1%n
+end_par
+linebreak
+line_break
+blank	           \
+
+tt               %f`%e="`"
+rm
+it               %f_%e="_"
+em               %f_%e="_"
+ss               %f_%e="_"
+brm              %f**%e="**"
+
+image            ![%1](%1)
+link             [%2](%1)
+s_enum           %n
+e_enum           %n%n
+s_itemize        %n
+e_itemize        %n%n
+s_description    <dl>
+e_description    </dl>
+
+s_verbatim       %n```none%n
+e_verbatim       %n```%n
+item_enum        1.
+item_itemize     *
+item_description <dt>%1<dd>
+
+s_center         <CENTER>
+e_center         </CENTER>
+
+b_table          %n<TABLE>%n
+e_table          %n</TABLE>%n
+b_row            <TR>
+e_row            </TR>
+b_col            <TD>
+e_col            </TD>
+
+s_enumerate      %n
+e_enumerate      %n%n
+itemize_enum     1.
+
+s_blockquote     %n```none%n
+e_blockquote     %n```%n

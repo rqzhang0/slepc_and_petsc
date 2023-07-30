@@ -1,0 +1,173 @@
+#! /bin/sh
+# Script to convert an arbitrary PostScript image to a cropped GIF image
+# suitable for incorporation into HTML documents as inlined images to be
+# viewed with Xmosaic.
+#
+# This is a modified version of the pstoepsi script 
+# by Doug Crabill dgc@cs.purdue.edu
+#
+# Note in the USAGE line below, the source PostScript file must end
+# in a .ps extention.  This is a GhostScript requirement, not mine...
+#
+# This software is provided without any guarantee.
+#
+# Nikos Drakos, nikos@cbl.leeds.ac.uk
+# Computer Based Learning Unit, University of Leeds.
+#
+# Tue Jun 8 13:11:53 BST 1993
+#
+# If the last arg is NOT figure, it generates a black and white image.
+#
+# Also knows "eps" and "cps"
+USAGE="Usage: $0 <file>.ps <file>.gif [environ-type]"
+if [ -n "$PSTOGIF_ECHO" ] ; then
+    set -x
+fi
+### Edit these variables if you want to run the script outside the translator
+### 
+#GS='/usr/bin/X11/gs'
+#PSTOPPM='pstoppm.ps'
+#PNMCROP='pbmplus/pnm/pnmcrop'
+#PPMTOGIF='pbmplus/ppm/ppmtogif'
+
+TMPDIR=${TMPDIR-/tmp}
+if [ ! -d $TMPDIR ] ; then
+    TMPDIR="."
+fi
+######################################################################
+if [ "$GS" = "" -a -x "/usr/bin/gs" ] ; then GS="/usr/bin/gs" ; fi
+if [ "$PSTOPPM" = "" ] ; then PSTOPPM=/home/rh/CODE/petsc_and_slepc/petsc/arch-linux-c-debug/bin/pstoppm.ps ; fi
+if [ "$PNMCROP" = "" ] ; then PNMCROP=/usr/bin/pnmcrop ; fi
+if [ "$PBMTOXBM" = "" ] ; then PBMTOXBM=/usr/bin/pbmtoxbm ; fi
+if [ "$PPMTOGIF" = "" ] ; then PPMTOGIF=/usr/bin/ppmtogif ; fi
+if [ "$PNMQUANT" = "" ] ; then PNMQUANT=/usr/bin/pnmquant ; fi
+
+# Set to -r150 for some on-line displays
+res=""
+if [ -n "$PSTOGIF_RES" ] ; then
+   res="-r$PSTOGIF_RES"
+fi
+
+#
+# First, convert into canonical form
+FNAME=`basename "$1"`
+DIRNAME=`dirname "$1"`
+FULLNAME=$DIRNAME"/"$FNAME
+BASE=`basename "$1" .ps`
+if [ $# -lt 2 ] ; then
+	echo "Two arguments are required (input and output file names)" 
+	echo $USAGE 1>&2
+	exit 1
+fi
+if [ $# -lt 2 -o ! -f "$1" ] ; then
+	echo "Can not find file $1" 1>&2
+	echo $USAGE 1>&2
+	exit 1
+fi
+#
+# This code handles different directories
+if [ "$FULLNAME" != "FNAME" ] ; then
+    rm -f .foo.ps
+    cp $FULLNAME .foo.ps
+    OLDBASE=$BASE
+    BASE=".foo"
+fi
+#
+# This code handles different extensions (.cps, .eps, etc)
+if [ "$FNAME" = "$BASE" ] ; then
+        BASE=`basename "$1" .eps`
+        if [ "$FNAME" = "$BASE" ] ; then 
+	    BASE=`basename "$1" .cps`
+            if [ "$FNAME" = "$BASE" ] ; then 
+	        rm -f .foo.ps
+                cp $FULLNAME .foo.ps
+	        OLDBASE=$BASE
+                BASE=".foo"
+	    else
+                # code REQUIRES .ps extension!
+                rm -f .foo.ps
+                cp $FNAME .foo.ps
+	        OLDBASE=$BASE
+                BASE=".foo"
+            fi
+        else
+            # code REQUIRES .ps extension!
+            rm -f .foo.ps
+            cp $FNAME .foo.ps
+	    OLDBASE=$BASE
+            BASE=".foo"
+        fi
+fi
+
+if [ "$3" = "figure" ] ; then
+    ppmrun="ppm8run"
+else
+    ppmrun="ppm1run"
+fi
+
+papersize=letter
+# Use papersize=ledger for figures that are wider than a letter page.
+if [ -n "$PAPERSIZE" ] ; then
+    papersize=$PAPERSIZE
+fi
+
+trap 'rm -f ${BASE}.ppm; exit' 1 2 3 4 13 15
+
+# Newer GS versions can do this directly
+gsversion=`$GS -version | sed -n 1p | \
+	sed -e 's/Aladdin//g' -e 's/Ghostscript//g' -e 's/(.*)//g'`
+# We added the A-Z to remove things like "BETA VERSION"
+gsmajorversion=`echo $gsversion | sed -e 's/[ A-Z]*\([0-9]\)\.[0-9]*/\1/g'`
+if [ -z "$gsmajorversion" ] ; then
+    # Guess that it is recent...
+    gsmajorversion=3
+fi
+if [ "$gsmajorversion" -gt 3 ] ; then
+    $GS $res -sPAPERSIZE=$papersize -dQUIET -dNOPAUSE -sDEVICE=ppm -sOutputFile=$TMPDIR/$$-${BASE}.ppm -dBATCH $BASE.ps
+    if [ ! -f $TMPDIR/$$-${BASE}.ppm -a ! -f $TMPDIR/$$-${BASE}.1.ppm ] ; then
+        # Try again, but with a showpage (needed for some versions of gs
+        # when handling EPS files)
+        cat $BASE.ps - >$TMPDIR/$$-${BASE}.ps <<EOF
+showpage
+EOF
+        $GS -sPAPERSIZE=$papersize -dQUIET -dNOPAUSE -sDEVICE=ppm -sOutputFile=$TMPDIR/$$-${BASE}.ppm -dBATCH $TMPDIR/$$-$BASE.ps
+	rm -f $TMPDIR/$$-${BASE}.ps
+    fi
+else
+    # Old Ghostscript version
+    $GS -q -dNODISPLAY $PSTOPPM << ND
+100 100	 ppmsetdensity
+($BASE) $ppmrun
+ND
+    # The one good thing about the old Ghostscript version is that when 
+    # presented with a multipage Postscript file, it generated separate ppm
+    # files for each page.
+fi
+
+if [ -f $TMPDIR/$$-${BASE}.ppm ] ; then
+    # Make sure there are at most 256 colors (otherwise the conversion
+    # to gif will fail)
+    $PNMCROP $TMPDIR/$$-${BASE}.ppm | $PNMQUANT 256 | $PPMTOGIF - > $2
+else
+     # Test for any files at all
+     if [ -f $TMPDIR/$$-${BASE}.1ppm ] ; then
+         for i in `ls $TMPDIR/$$-${BASE}.[1-9]*ppm` ; do 
+           $PNMCROP $i | $PNMQUANT 256  | \
+	       $PPMTOGIF - > `echo $i |sed 's/\.\(.*\)ppm/\1\.xbm/'`;
+   	    echo "Writing `echo $i |sed 's/\.\(.*\)ppm/\1\.xbm/'`"
+         done
+     else
+         echo "Did not generate PPM file from Postscript $BASE" 
+     fi
+fi
+
+rm -f $TMPDIR/$$-${BASE}.ppm $TMPDIR/$$-${BASE}.pnm
+rm -f $TMPDIR/$$-${BASE}.[1-9]*ppm
+if [ "$BASE" = ".foo" ] ; then
+    # Remove a copy that may have been created in the TMPDIR
+    rm -f $TMPDIR/$$-.foo.ps
+    # Remove the copy in this directory
+    rm -f .foo.ps
+fi
+
+exit 0

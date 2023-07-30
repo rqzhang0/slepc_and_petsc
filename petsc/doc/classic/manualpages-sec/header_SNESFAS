@@ -1,0 +1,4 @@
+# Full Approximation Scheme (FAS) nonlinear multigrid
+
+The `SNESFAS` subclass of `SNES` is a nonlinear multigrid solver which uses the Full Approximation Scheme.
+

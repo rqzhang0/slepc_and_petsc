@@ -1,0 +1,10 @@
+/_build*
+/images
+
+# Populated from the classic docs build
+/manualpages/*/*.md
+/manualpages/singleindex.md
+/manualpages/help.html
+/manualpages/manualpages.cit
+/manualpages/concepts
+/manualpages/htmlmap*

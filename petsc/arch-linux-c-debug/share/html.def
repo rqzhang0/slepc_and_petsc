@@ -1,0 +1,60 @@
+#
+# This is a sample definition file for HTML output
+# 
+preamble         <body style="background-color:#FFFFFF">%n
+postamble        </body>%n
+heading          %n<H%i>%1</H%i>%n
+section          %n<H%i>%1</H%i>%n
+#
+# This form of title lets you jump to the title.
+title            %n<TITLE>%1</TITLE>%n<A NAME="%1"><H1>%1</H1></A>%n
+end_par          %n<P>%n
+linebreak        <br>
+line_break       <br>
+blank	         \ 
+tt               %f<tt>%e="</tt>"
+rm               %f
+it               %f<em>%e="</em>"
+em               %f<em>%e="</em>"
+ss               %f<em>%e="</em>"
+brm              %f<b>%e="</b>"
+#
+# You can use <A HREF="%s1">Push here for picture</A> to make the images
+# external to the document
+image            <IMG SRC="%1">
+link             <A HREF="%1">%2</A>
+s_enum           <OL>
+e_enum           </OL>%n
+s_itemize        <ul>
+e_itemize        </ul>
+s_description    <dl>
+e_description    </dl>
+# LISTING is better than pre,code (less space before environment)
+# But PRE is HTML3.2 (and LISTING isn't)
+s_verbatim       <PRE>%n
+e_verbatim       </PRE>%n
+item_enum        <li>
+item_itemize     <li>
+item_description <dt>%1<dd>
+#
+# This is the NetScape form; it makes more sense than the attribute
+# form (add to each <P> a CENTER attribute).
+s_center <CENTER>
+e_center </CENTER>
+#
+# This is a first cut at supporting NetScape tables.
+# Still need something for table headings
+b_table %n<TABLE>%n
+e_table %n</TABLE>%n
+b_row   <TR>
+e_row   </TR>
+b_col   <TD>
+e_col   </TD>
+#
+# Additional environments
+s_enumerate <ol>
+e_enumerate </ol>
+itemize_enum <li>
+#
+s_blockquote <blockquote>
+e_blockquote </blockquote>

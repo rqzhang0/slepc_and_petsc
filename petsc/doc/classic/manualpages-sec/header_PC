@@ -1,0 +1,4 @@
+# Preconditioners (PC)
+
+Preconditioner class `PC` for managing all preconditioner (and direct solve) algorithms. Users guide section: [](sec_pc).
+

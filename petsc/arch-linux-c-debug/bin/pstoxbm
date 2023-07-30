@@ -1,0 +1,113 @@
+#!/bin/sh
+# Script to convert an arbitrary PostScript image to a cropped XBM image
+# suitable for incorporation into HTML documents as inlined images to be
+# viewed with Xmosaic.
+#
+# This is a modified version of the pstoepsi script 
+# by Doug Crabill dgc@cs.purdue.edu
+#
+# Note in the USAGE line below, the source PostScript file must end
+# in a .ps extention.  This is a GhostScript requirement, not mine...
+#
+# This software is provided without any guarantee.
+#
+# Nikos Drakos, nikos@cbl.leeds.ac.uk
+# Computer Based Learning Unit, University of Leeds.
+#
+# Tue Jun 8 13:11:53 BST 1993
+
+USAGE="Usage: $0 <file>.ps <file>.xbm"
+
+### Edit these variables if you want to run the script outside the translator
+### 
+#GS='/usr/bin/X11/gs'
+#PSTOPPM='pstoppm.ps'
+#PNMCROP='pbmplus/pnm/pnmcrop'
+#PBMTOXBM='pbmplus/pbm/pbmtoxbm'
+
+TMPDIR=${TMPDIR-/tmp}
+if [ ! -d $TMPDIR ] ; then
+    TMPDIR="."
+fi
+######################################################################
+if [ "$GS" = "" -a -x "/usr/bin/gs" ] ; then GS="/usr/bin/gs" ; fi
+if [ "$PSTOPPM" = "" ] ; then PSTOPPM=${prefix}/share/pstoppm.ps ; fi
+if [ "$PNMCROP" = "" ] ; then PNMCROP=/usr/bin/pnmcrop ; fi
+if [ "$PBMTOXBM" = "" ] ; then PBMTOXBM=/usr/bin/pbmtoxbm ; fi
+if [ "$PPMTOGIF" = "" ] ; then PPMTOGIF=/usr/bin/ppmtogif ; fi
+
+######################################################################
+
+BASE=`basename "$1" .ps`
+FNAME=$1
+
+if [ $# -lt 2 -o ! -f "$1" ] ; then
+	echo "Can not find file $1" 1>&2
+	echo $USAGE 1>&2
+	exit 1
+fi
+
+trap 'rm -f ${BASE}.ppm; exit' 1 2 3 4 13 15
+
+if [ "$1" = "$BASE" ] ; then
+        BASE=`basename "$1" .eps`
+        if [ "$1" = "$BASE" ] ; then 
+	    BASE=`basename "$1" .cps`
+            if [ "$1" = "$BASE" ] ; then 
+	        echo "Can not process file $1" 1>&2
+	        echo $USAGE 1>&2
+	        exit 1
+	    else
+                # code REQUIRES .ps extension!
+                rm -f .foo.ps
+                cp $FNAME .foo.ps
+	        OLDBASE=$BASE
+                BASE=".foo"
+            fi
+        else
+            # code REQUIRES .ps extension!
+            rm -f .foo.ps
+            cp $FNAME .foo.ps
+	    OLDBASE=$BASE
+            BASE=".foo"
+        fi
+fi
+
+# Newer GS versions can do this directly
+gsversion=`$GS -version | sed -n 1p | \
+	sed -e 's/Aladdin//g' -e 's/Ghostscript//g' -e 's/(.*)//g'`
+# We added the A-Z to remove things like "BETA VERSION"
+gsmajorversion=`echo $gsversion | sed -e 's/[ A-Z]*\([0-9]\)\.[0-9]*/\1/g'`
+if [ -z "$gsmajorversion" ] ; then
+    # Guess that it is recent...
+    gsmajorversion=3
+fi
+if [ $gsmajorversion -gt 3 ] ; then
+    $GS -dQUIET -dNOPAUSE -sDEVICE=pnm -sOutputFile=$TMPDIR/$$-${BASE}.ppm -dBATCH $BASE.ps
+#    $GS -dQUIET -dNOPAUSE -sDEVICE=ppm -sOutputFile=${BASE}.ppm -dBATCH $BASE.ps
+else
+    $GS -q -dNODISPLAY $PSTOPPM << ND
+100 100	 ppmsetdensity
+($BASE) ppm1run
+ND
+fi
+
+if test -f $TMPDIR/$$-${BASE}.ppm ; then 
+    $PNMCROP $TMPDIR/$$-${BASE}.ppm >$TMPDIR/$$-${BASE}.pnm
+    $PBMTOXBM $TMPDIR/$$-${BASE}.pnm > $2
+else 
+    for i in `ls $TMPDIR/$$-${BASE}.[1-9]*ppm` ; do
+        $PNMCROP $i > $TMPDIR/$$-${BASE}.pnm
+        $PBMTOXBM $TMPDIR/$$-${BASE}.pnm > \
+	    `echo $i |sed 's/\.\(.*\)ppm/\1\.xbm/'`;
+        echo "Writing `echo $i |sed 's/\.\(.*\)ppm/\1\.xbm/'`"
+     done
+fi
+
+rm -f $TMPDIR/$$-${BASE}.ppm $TMPDIR/$$-${BASE}.pnm
+rm -f $TMPDIR/$$-${BASE}.[1-9]*ppm
+if [ "$BASE" = ".foo" ] ; then
+    rm -f .foo.ps
+fi
+
+exit 0

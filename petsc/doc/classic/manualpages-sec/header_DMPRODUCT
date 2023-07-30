@@ -1,0 +1,3 @@
+# Tensor products of meshes (DMRODUCT)
+
+The `DMPRODUCT` subclass of `DM` represents a (local) Cartesian product of other `DM` objects.

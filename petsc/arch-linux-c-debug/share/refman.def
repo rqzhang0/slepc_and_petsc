@@ -1,0 +1,12 @@
+# tohtml definitions for refman.sty
+# These aren't correct yet
+raw pagerule 0 <hr>
+exec manname 0 "\noindent\textbf"
+asis startarg 2
+exec subhead 0 "\subsection"
+asis startmanpage 0
+asis endmanpage 0
+hdef nextline 0 '<br>'
+exec startvb 0 "\relax"
+exec endvb 0 "\relax"
+nop location 1

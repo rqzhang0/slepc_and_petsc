@@ -1,0 +1,74 @@
+print_mesg_after_build: 
+	-@echo "========================================="
+	-@echo "Now to install the libraries do:"
+	-@echo "${MAKE_USER} PETSC_DIR=${PETSC_DIR} PETSC_ARCH=${PETSC_ARCH} install"
+	-@echo "========================================="
+
+libc: ${LIBNAME}(${OBJSC})
+
+libcxx: ${LIBNAME}(${OBJSCXX})
+
+libcu: ${LIBNAME}(${OBJSCU})
+
+libf: ${OBJSF}
+	-${AR} ${AR_FLAGS} ${LIBNAME} ${OBJSF}
+
+shared_arch: shared_linux
+
+amrex-build: 
+
+amrex-install: 
+
+mfem-build: 
+
+mfem-install: 
+
+slepc-build: 
+
+slepc-install: 
+
+bamg-build: 
+
+bamg-install: 
+
+hpddm-build: 
+
+hpddm-install: 
+
+libmesh-build: 
+
+libmesh-install: 
+
+petsc4pybuild: 
+	@echo "*** Building petsc4py ***"
+	@${RM} ${PETSC_ARCH}/lib/petsc/conf/petsc4py.errorflg
+	@(cd src/binding/petsc4py && ${RM} -rf build && \
+           PETSC_DIR=${DESTDIR}/home/rh/CODE/petsc_and_slepc/petsc/build PETSC_ARCH= MPICC=${PCC} /usr/bin/python3 setup.py build ) || \
+             (echo "**************************ERROR*************************************" && \
+             echo "Error building petsc4py." && \
+             echo "********************************************************************" && \
+             touch ${PETSC_ARCH}/lib/petsc/conf/petsc4py.errorflg && \
+             exit 1)
+
+petsc4pyinstall: 
+	@echo "*** Installing petsc4py ***"
+	@(MPICC=${PCC} && export MPICC && cd src/binding/petsc4py && \
+           PETSC_DIR=${DESTDIR}/home/rh/CODE/petsc_and_slepc/petsc/build PETSC_ARCH= MPICC=${PCC} /usr/bin/python3 setup.py install --install-lib=/home/rh/CODE/petsc_and_slepc/petsc/build/lib \
+               $(if $(DESTDIR),--root='$(DESTDIR)') ) || \
+             (echo "**************************ERROR*************************************" && \
+             echo "Error installing petsc4py." && \
+             echo "********************************************************************" && \
+             exit 1)
+	@echo "====================================="
+	@echo "To use petsc4py, add /home/rh/CODE/petsc_and_slepc/petsc/build/lib to PYTHONPATH"
+	@echo "====================================="
+
+petsc4pytest: 
+	@echo "*** Testing petsc4py on ${PETSC4PY_NP} processes ***"
+	@PYTHONPATH=/home/rh/CODE/petsc_and_slepc/petsc/build/lib:${PETSC_MPI4PY_PYTHONPATH}:${PYTHONPATH} PETSC_OPTIONS="${PETSC_OPTIONS} -check_pointer_intensity 0 -error_output_stdout -malloc_dump ${PETSC_TEST_OPTIONS}" ${MPIEXEC} -n ${PETSC4PY_NP} /usr/bin/python3 src/binding/petsc4py/test/runtests.py --verbose
+	@echo "====================================="
+
+petsc4py-build: 
+
+petsc4py-install: petsc4pybuild petsc4pyinstall
+

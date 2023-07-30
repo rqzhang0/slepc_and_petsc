@@ -1,0 +1,14 @@
+#
+# These are the definitions for doc2lt and doctext HTML output
+#
+# These are color overrides for the commands in html.def
+#
+# Doc2lt single line entry
+definition %n<B>%1</B>%n
+section    %n<H2><FONT COLOR="#CC3333">%1</FONT></H2>%n
+s_synopsis %n<H2><FONT COLOR="#CC3333">Synopsis</FONT></H2>%n<PRE>%n
+e_synopsis %n</PRE>%n
+#
+# individual arg form
+location   <P><B><FONT COLOR="#CC3333">Location:</FONT></B>%1<P>
+

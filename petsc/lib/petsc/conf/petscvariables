@@ -1,0 +1,3 @@
+PETSC_ARCH=arch-linux-c-debug
+PETSC_DIR=/home/rh/CODE/petsc_and_slepc/petsc
+include $(PETSC_DIR)/$(PETSC_ARCH)/lib/petsc/conf/petscvariables
